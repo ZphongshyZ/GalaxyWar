@@ -11,6 +11,9 @@ public class InputManager : MonoBehaviour
     [SerializeField] protected Vector3 mousePos;
     public Vector3 MousePos { get => mousePos; }
 
+    [SerializeField] protected float onFiring;
+    public float OnFiring { get => onFiring; }
+
     private void Awake()
     {
         if (InputManager.instance != null) Debug.Log("Only 1 Input Manager allowed to exist");
@@ -20,6 +23,12 @@ public class InputManager : MonoBehaviour
     private void FixedUpdate()
     {
         this.GetMousePos();
+        this.GetMouseDown();
+    }
+
+    protected virtual void GetMouseDown()
+    {
+        this.onFiring = Input.GetAxis("Fire1");
     }
 
     protected virtual void GetMousePos()
