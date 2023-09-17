@@ -15,7 +15,7 @@ public abstract class DeSpawner : PhongMonobehaviour
         this.DeSpawnObj();
     }
 
-    protected virtual void DeSpawnObj()
+    public virtual void DeSpawnObj()
     {
         Destroy(transform.parent.gameObject);
     }

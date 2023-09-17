@@ -7,7 +7,6 @@ public class ShipShooting : PhongMonobehaviour
     [SerializeField] protected bool isShooting = false;
     [SerializeField] protected float shootDelay = 0.1f;
     [SerializeField] protected float shootTime = 0f;
-    [SerializeField] protected Transform bulletPrefabs;
 
     private void Update()
     {
@@ -19,17 +18,6 @@ public class ShipShooting : PhongMonobehaviour
         this.Shooting();
     }
 
-    protected override void LoadComponents()
-    {
-        base.LoadComponents();
-        this.LoadPrefabs();
-    }
-
-    protected virtual void LoadPrefabs()
-    {
-        //this.bulletPrefabs = GameObject.Find("ShipBullet").transform;
-    }
-
     protected virtual void Shooting()
     {
         this.shootTime += Time.deltaTime;
@@ -39,7 +27,7 @@ public class ShipShooting : PhongMonobehaviour
         Vector3 spawnPos = transform.position;
         Quaternion rotation = transform.parent.rotation;
         rotation.z = 180f;
-        Transform newBullet = BulletSpawner.Instance.Spawn(BulletSpawner.ShipBullet, spawnPos, rotation);
+        Transform newBullet = BulletSpawner.Instance.Spawn(BulletSpawner.shipBullet, spawnPos, rotation);
         if (newBullet == null) return;
         newBullet.gameObject.SetActive(true);
     }
