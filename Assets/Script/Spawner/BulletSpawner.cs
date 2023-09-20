@@ -8,6 +8,7 @@ public class BulletSpawner : Spawner
     public static BulletSpawner Instance { get => instance; }
 
     public static string shipBullet = "ShipBullet";
+    public static string enermyBullet_2 = "EnermyBullet";
 
     protected override void Awake()
     {
