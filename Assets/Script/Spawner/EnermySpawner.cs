@@ -7,8 +7,7 @@ public class EnermySpawner : Spawner
     private static EnermySpawner instance;
     public static EnermySpawner Instance { get => instance; }
 
-    public static string enermyName_1 = "Enermy_1";
-    public static string enermyName_2 = "Enermy_2";
+    public static string[] enermyNames = new string[] { "Enermy_1", "Enermy_2", "Enermy_3" };
 
     [SerializeField] protected float spawnDelay = 7f;
     [SerializeField] protected float spawnTime = 0f;
@@ -30,14 +29,21 @@ public class EnermySpawner : Spawner
         this.spawnTime += Time.fixedDeltaTime;
         if (this.spawnTime < this.spawnDelay) return;
         spawnTime = 0f;
-        List<Transform> enermys = SpawnPoint.Instance.ListEnermy(enermyName_2);
+        string name = RandomEnermy(EnermySpawner.enermyNames);
+        List<Transform> enermys = SpawnPoint.Instance.ListEnermy(name);
         for (int i = 0; i < enermys.Count; i++)
         {
             Transform ranPos = enermys[i];
             Vector3 pos = ranPos.position;
             Quaternion rot = transform.rotation;
-            Transform obj = this.Spawn(EnermySpawner.enermyName_2, pos, rot);
+            Transform obj = this.Spawn(name, pos, rot);
             obj.gameObject.SetActive(true);
         }
+    }
+
+    protected virtual string RandomEnermy(string[] enermys)
+    {
+        int rand = Random.Range(0, enermys.Length);
+        return enermys[rand];
     }
 }

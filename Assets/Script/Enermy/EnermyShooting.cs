@@ -2,33 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnermyShooting : PhongMonobehaviour
+public class EnermyShooting : EnermyAttack
 {
-    [SerializeField] protected float shootDelay;
-    [SerializeField] protected float shootTime = 0f;
-    [SerializeField] protected bool isShooting = false;
-
-    protected void FixedUpdate()
+    protected override void Attack()
     {
+        base.Attack();
         this.Shoot();
     }
 
     protected virtual void Shoot()
     {
-        shootTime += Time.fixedDeltaTime;
-        this.shootDelay = Random.Range(2f, 4f);
-        if (this.shootTime < this.shootDelay) return;
-        this.shootTime = 0f;
-        if (!isShooting) return;
+        attackTime += Time.fixedDeltaTime;
+        this.attackDelay = Random.Range(2f, 4f);
+        if (this.attackTime < this.attackDelay) return;
+        this.attackTime = 0f;
+        if (!isAttacking) return;
         Vector3 spawnPos = transform.position;
         Quaternion rotation = transform.parent.rotation;
         Transform newBullet = BulletSpawner.Instance.Spawn(BulletSpawner.enermyBullet_2, spawnPos, rotation);
         if (newBullet == null) return;
         newBullet.gameObject.SetActive(true);
-    }
-
-    public void SetIsShooting(bool value)
-    {
-        this.isShooting = value;
     }
 }

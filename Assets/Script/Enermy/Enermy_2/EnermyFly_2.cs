@@ -6,7 +6,6 @@ using UnityEngine;
 public class EnermyFly_2 : EnermyFly
 {
     [SerializeField] protected EnermyShooting enermyShooting;
-    [SerializeField] protected float attackDis = 4.5f;
 
     protected override void Update()
     {
@@ -30,12 +29,12 @@ public class EnermyFly_2 : EnermyFly
         if (this.currentDis <= this.attackDis)
         {
             this.isFlying = false;
-            this.enermyShooting.SetIsShooting(!this.isFlying);
+            this.enermyShooting.SetIsAttacking(!this.isFlying);
         }
         else
         {
             this.isFlying = true;
-            this.enermyShooting.SetIsShooting(!this.isFlying);
+            this.enermyShooting.SetIsAttacking(!this.isFlying);
         }
     }
 }

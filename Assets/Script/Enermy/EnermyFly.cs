@@ -5,6 +5,8 @@ using UnityEngine;
 public class EnermyFly : ObjectCanFly
 {
     [SerializeField] protected Transform zonePlayer;
+
+    [SerializeField] protected float attackDis = 4f;
     protected float currentDis;
 
     protected override void Update()
