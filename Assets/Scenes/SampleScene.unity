@@ -343,9 +343,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 109095242}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.63, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 524998500}
@@ -475,6 +475,37 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &191600232
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 191600233}
+  m_Layer: 0
+  m_Name: Point_14
+  m_TagString: Enermy_3
+  m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &191600233
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 191600232}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3, y: 3.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2131786991}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &426559455
 GameObject:
   m_ObjectHideFlags: 0
@@ -486,7 +517,7 @@ GameObject:
   - component: {fileID: 426559456}
   m_Layer: 0
   m_Name: Model
-  m_TagString: Untagged
+  m_TagString: Dangerous
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -604,6 +635,7 @@ MonoBehaviour:
   prefabs:
   - {fileID: 95476276}
   - {fileID: 109095243}
+  - {fileID: 1816178770}
   poolObjs: []
   spawnDelay: 7
   spawnTime: 0
@@ -815,6 +847,53 @@ Transform:
   m_Father: {fileID: 2131786991}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &567468045
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 567468046}
+  - component: {fileID: 567468047}
+  m_Layer: 0
+  m_Name: EnermyAtack_3
+  m_TagString: Dangerous
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &567468046
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 567468045}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1816178770}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &567468047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 567468045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9a420b39b5d77a49a58947192b121cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackDelay: 0
+  attackTime: 0
+  isAttacking: 0
 --- !u!1 &572231687
 GameObject:
   m_ObjectHideFlags: 0
@@ -988,6 +1067,37 @@ Transform:
   m_Father: {fileID: 2131786991}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &749670523
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 749670524}
+  m_Layer: 0
+  m_Name: Point_12
+  m_TagString: Enermy_3
+  m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &749670524
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 749670523}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -3, y: 3.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2131786991}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &860692534
 GameObject:
   m_ObjectHideFlags: 0
@@ -1068,9 +1178,10 @@ GameObject:
   m_Component:
   - component: {fileID: 976881328}
   - component: {fileID: 976881329}
+  - component: {fileID: 976881330}
   m_Layer: 0
   m_Name: Body
-  m_TagString: Untagged
+  m_TagString: Dangerous
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1111,6 +1222,22 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.6245681, y: 0.41801655, z: 1}
   m_Center: {x: 0.014194697, y: 0.16323942, z: 0}
+--- !u!114 &976881330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 976881327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea017fe1eddd53d4dbcb6270c0cf7df4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 1
+  hpMax: 1
+  isDead: 0
+  enermyDeSpawn: {fileID: 2097652215}
 --- !u!1 &1046848395
 GameObject:
   m_ObjectHideFlags: 0
@@ -1449,7 +1576,7 @@ Transform:
   m_GameObject: {fileID: 1296559467}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1472092876}
@@ -2209,6 +2336,37 @@ MonoBehaviour:
   dislimit: 70
   distance: 0
   mainCam: {fileID: 519420032}
+--- !u!1 &1815461162
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1815461163}
+  m_Layer: 0
+  m_Name: Point_13
+  m_TagString: Enermy_3
+  m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1815461163
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1815461162}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 3.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2131786991}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1816178769
 GameObject:
   m_ObjectHideFlags: 0
@@ -2220,7 +2378,7 @@ GameObject:
   - component: {fileID: 1816178770}
   m_Layer: 0
   m_Name: Enermy_3
-  m_TagString: Untagged
+  m_TagString: Dangerous
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2232,14 +2390,16 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1816178769}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 426559456}
   - {fileID: 2141303208}
+  - {fileID: 567468046}
   - {fileID: 976881328}
+  - {fileID: 2097652214}
   m_Father: {fileID: 1169951971}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2389,6 +2549,53 @@ Transform:
   m_Father: {fileID: 2131786991}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2097652213
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2097652214}
+  - component: {fileID: 2097652215}
+  m_Layer: 0
+  m_Name: Despawn
+  m_TagString: Dangerous
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2097652214
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2097652213}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1816178770}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2097652215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2097652213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7d4b6252245e4243aa7679129872fde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dislimit: 70
+  distance: 0
+  mainCam: {fileID: 519420032}
 --- !u!1 &2107454866
 GameObject:
   m_ObjectHideFlags: 0
@@ -2433,9 +2640,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d77da292adb56e34bae6c7f55e1074ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shootDelay: 0
-  shootTime: 0
-  isShooting: 0
+  attackDelay: 0
+  attackTime: 0
+  isAttacking: 0
 --- !u!1 &2131786989
 GameObject:
   m_ObjectHideFlags: 0
@@ -2477,6 +2684,9 @@ Transform:
   - {fileID: 1141950057}
   - {fileID: 709525685}
   - {fileID: 1698738297}
+  - {fileID: 749670524}
+  - {fileID: 1815461163}
+  - {fileID: 191600233}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2505,6 +2715,9 @@ MonoBehaviour:
   - {fileID: 1141950057}
   - {fileID: 709525685}
   - {fileID: 1698738297}
+  - {fileID: 749670524}
+  - {fileID: 1815461163}
+  - {fileID: 191600233}
 --- !u!1 &2141303207
 GameObject:
   m_ObjectHideFlags: 0
@@ -2517,7 +2730,7 @@ GameObject:
   - component: {fileID: 2141303209}
   m_Layer: 0
   m_Name: EnermyFly_3
-  m_TagString: Untagged
+  m_TagString: Dangerous
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2554,6 +2767,7 @@ MonoBehaviour:
   direction: {x: 0, y: -1, z: 0}
   zonePlayer: {fileID: 637583517}
   attackDis: 4
+  enermyKamikaze: {fileID: 567468047}
 --- !u!4 &408714464484412825
 Transform:
   m_ObjectHideFlags: 0

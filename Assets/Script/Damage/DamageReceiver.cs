@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class DamageReceiver : PhongMonobehaviour
 {
+    [SerializeField] protected EnermySO enermySO;
+
     [SerializeField] protected int hp = 1;
     [SerializeField] protected int hpMax = 1;
     [SerializeField] protected bool isDead = false;
@@ -12,6 +14,20 @@ public class DamageReceiver : PhongMonobehaviour
     {
         base.OnEnable();
         this.Reborn();
+    }
+
+    protected override void LoadComponents()
+    {
+        base.LoadComponents();
+        this.LoadSO();
+    }
+
+    protected virtual void LoadSO()
+    {
+        if (this.enermySO != null) return;
+        string resPath = "Enermy/" + transform.parent.name;
+        this.enermySO = Resources.Load<EnermySO>(resPath);
+        Debug.Log(transform.name + " LoadEnermySO " + resPath, gameObject);
     }
 
     public virtual void Reborn()

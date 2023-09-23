@@ -20,4 +20,10 @@ public class EnermyDamageReceiver : DamageReceiver
     {
         this.enermyDeSpawn.DeSpawnObj();
     }
+
+    public override void Reborn()
+    {
+        this.hpMax = this.enermySO.hpMax;
+        base.Reborn();
+    }
 }
