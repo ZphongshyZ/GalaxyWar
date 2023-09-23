@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Enermy_2
   m_EditorClassIdentifier: 
   enermyName: Enermy
-  hpMax: 2
+  hpMax: 5

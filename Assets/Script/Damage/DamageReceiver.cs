@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DamageReceiver : PhongMonobehaviour
+public abstract class DamageReceiver : PhongMonobehaviour
 {
     [SerializeField] protected EnermySO enermySO;
 
@@ -63,8 +63,6 @@ public class DamageReceiver : PhongMonobehaviour
         this.OnDead();
     }
 
-    protected virtual void OnDead()
-    {
-        //For Override
-    }
+    protected abstract void OnDead();
+
 }
