@@ -31,7 +31,8 @@ public class EnermyDamageReceiver : DamageReceiver
 
     protected virtual string GetOnDeadFXName()
     {
-        return FXSpawner.fxName1;
+        if (transform.parent.name == "Enermy_3") return FXSpawner.explosion2;
+        return FXSpawner.explosion1;
     }
 
     public override void Reborn()
