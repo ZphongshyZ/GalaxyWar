@@ -12,6 +12,7 @@ public class EnermyKamikaze : EnermyAttack
 
     protected virtual void Kamikaze()
     {
+        this.attackTime = 0f;
         if (!isAttacking) return;
         transform.parent.Translate(Vector3.down * 22f * Time.deltaTime);
     }
