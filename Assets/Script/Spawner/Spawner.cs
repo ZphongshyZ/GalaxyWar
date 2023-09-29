@@ -47,7 +47,7 @@ public class Spawner : PhongMonobehaviour
 
         if (prefab == null)
         {
-            Debug.LogWarning("Prefab not found" + prefabName);
+            Debug.LogWarning("Prefab not found " + prefabName);
             return null;
         }
 

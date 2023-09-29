@@ -1,0 +1,29 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class PointsSpawner : Spawner
+{
+    private static PointsSpawner instance;
+    public static PointsSpawner Instance { get => instance; }
+
+    public static string coin_1 = "Coin_1";
+    public static string dinamond_1 = "Dinamond_1";
+    public static string dinamond_2 = "Dinamond_2";
+    public static string dinamond_3 = "Dinamond_3";
+
+    protected override void Awake()
+    {
+        base.Awake();
+        if (PointsSpawner.instance != null) Debug.LogError("Only one PointsSpawner allowed to exist");
+        PointsSpawner.instance = this;
+    }
+
+    public virtual void Drop(List<DropRate> dropList, Vector3 pos, Quaternion rot)
+    {
+        PointsCode pointCode = dropList[1].pointSO.pointsCode;
+        Transform pointDrop = this.Spawn(pointCode.ToString(), pos, rot);
+        if (pointDrop == null) return;
+        pointDrop.gameObject.SetActive(true);
+    }
+}

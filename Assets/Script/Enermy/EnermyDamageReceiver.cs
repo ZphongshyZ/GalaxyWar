@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnermyDamageReceiver : DamageReceiver
 {
     [SerializeField] protected EnermyDeSpawn enermyDeSpawn;
+
     protected override void LoadComponents()
     {
         base.LoadComponents();
@@ -20,6 +21,11 @@ public class EnermyDamageReceiver : DamageReceiver
     {
         this.OnDeadFX();
         this.enermyDeSpawn.DeSpawnObj();
+
+        Vector3 dropPos = transform.position;
+        Quaternion dropRot = transform.rotation;
+
+        PointsSpawner.Instance.Drop( this.enermySO.dropList ,dropPos, dropRot);
     }
 
     protected virtual void OnDeadFX()
