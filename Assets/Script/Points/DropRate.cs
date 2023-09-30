@@ -5,7 +5,5 @@ using System;
 public class DropRate
 {
     public PointSO pointSO;
-    public float dropRate;
-    public int minDrop;
-    public int maxDrop;
+    public int dropRate;
 }

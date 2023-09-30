@@ -24,7 +24,6 @@ public class EnermyDamageReceiver : DamageReceiver
 
         Vector3 dropPos = transform.position;
         Quaternion dropRot = transform.rotation;
-
         PointsSpawner.Instance.Drop( this.enermySO.dropList ,dropPos, dropRot);
     }
 
