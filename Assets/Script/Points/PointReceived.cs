@@ -32,6 +32,7 @@ public class PointReceived : PhongMonobehaviour
         if(other.CompareTag("Player"))
         {
             this.coinDespawn.DeSpawnObj();
+            PointManager.Instance.AddPoint(this.pointSO.point);
         }
     }
 }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InputManager : MonoBehaviour
+public class InputManager : PhongMonobehaviour
 {
     //Singleton
     protected static InputManager instance;
@@ -14,8 +14,9 @@ public class InputManager : MonoBehaviour
     [SerializeField] protected float onFiring;
     public float OnFiring { get => onFiring; }
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         if (InputManager.instance != null) Debug.Log("Only 1 Input Manager allowed to exist");
         InputManager.instance = this;
     }
