@@ -10,6 +10,11 @@ public class EnermyAttack : PhongMonobehaviour
 
     protected virtual void FixedUpdate()
     {
+        
+    }
+
+    protected virtual void Update()
+    {
         this.Attack();
     }
 

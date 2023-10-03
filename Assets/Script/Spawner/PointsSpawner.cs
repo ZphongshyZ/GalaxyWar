@@ -23,7 +23,6 @@ public class PointsSpawner : Spawner
     {
         int itemNum = GachaItem(dropList);
         PointsCode pointCode = dropList[itemNum].pointSO.pointsCode;
-        Debug.Log(itemNum);
         Transform pointDrop = this.Spawn(pointCode.ToString(), pos, rot);
         if (pointDrop == null) return;
         pointDrop.gameObject.SetActive(true);

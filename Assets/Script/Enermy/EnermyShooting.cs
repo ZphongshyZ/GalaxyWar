@@ -12,8 +12,8 @@ public class EnermyShooting : EnermyAttack
 
     protected virtual void Shoot()
     {
-        attackTime += Time.fixedDeltaTime;
-        this.attackDelay = Random.Range(2f, 4f);
+        attackTime += Time.deltaTime;
+        this.attackDelay = Random.Range(5f, 7f);
         if (this.attackTime < this.attackDelay) return;
         this.attackTime = 0f;
         if (!isAttacking) return;

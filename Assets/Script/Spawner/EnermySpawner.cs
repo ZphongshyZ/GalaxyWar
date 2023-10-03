@@ -7,7 +7,7 @@ public class EnermySpawner : Spawner
     private static EnermySpawner instance;
     public static EnermySpawner Instance { get => instance; }
 
-    public static string[] enermyNames = new string[] { "Enermy_1", "Enermy_2", "Enermy_3" };
+    public static string[] enermyNames = new string[] { /*"Enermy_1", "Enermy_2", "Enermy_3",*/ "Meteorite" };
 
     [SerializeField] protected float spawnDelay = 7f;
     [SerializeField] protected float spawnTime = 0f;
@@ -19,14 +19,14 @@ public class EnermySpawner : Spawner
         EnermySpawner.instance = this;
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         this.EnermySpawning();
     }
 
     protected virtual void EnermySpawning()
     {
-        this.spawnTime += Time.fixedDeltaTime;
+        this.spawnTime += Time.deltaTime;
         if (this.spawnTime < this.spawnDelay) return;
         spawnTime = 0f;
         string name = RandomEnermy(EnermySpawner.enermyNames);
