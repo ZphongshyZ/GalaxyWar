@@ -12,7 +12,7 @@ public class BackgroundManager : PhongMonobehaviour
 
     [SerializeField] protected float currentDis;
     [SerializeField] protected float limitDis = 25f;
-    [SerializeField] protected float reSpawnDis = 40.96f*2;
+    [SerializeField] protected float reSpawnDis = 40.95f*2;
 
     protected override void LoadComponents()
     {

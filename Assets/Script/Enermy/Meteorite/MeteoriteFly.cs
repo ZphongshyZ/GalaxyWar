@@ -14,7 +14,7 @@ public class MeteoriteFly : EnermyFly
     {
         base.ResetValue();
         this.movespeed = 4f;
-        this.attackDis = 6f;
+        this.attackDis = 7f;
     }
 
     protected override void Update()
@@ -34,7 +34,7 @@ public class MeteoriteFly : EnermyFly
         enermyWarning = transform.parent.GetComponentInChildren<EnermyWarning>();
     }
 
-    protected virtual void Chase()
+    protected override void Chase()
     {
         if (this.currentDis <= this.attackDis)
         {

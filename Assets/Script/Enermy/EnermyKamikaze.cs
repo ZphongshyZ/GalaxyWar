@@ -3,18 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EnermyKamikaze : EnermyAttack
-{
-    [SerializeField] protected float speedKamikaze = 22f;
-    
-    protected override void Attack()
+{   
+    public virtual void Kamikaze(float speed, float attackDelay)
     {
-        base.Attack();
-        Invoke(nameof(Kamikaze), 4f);
-    }
-
-    protected virtual void Kamikaze()
-    {
-        if (!isAttacking) return;
-        transform.parent.Translate(Vector3.down * this.speedKamikaze * Time.deltaTime);
+        if (!this.isAttacking) this.attackTime = 0;
+        this.attackTime += Time.deltaTime;
+        this.attackDelay = attackDelay;
+        if (this.attackTime < this.attackDelay) return;
+        transform.parent.Translate(Vector3.down * speed * Time.deltaTime);
     }
 }

@@ -11,6 +11,7 @@ public class EnermyFly_2 : EnermyFly
     {
         base.Update();
         this.Chase();
+        this.enermyShooting.Shoot(BulletSpawner.enermyBullet_2, Random.Range(3f,5f));
     }
 
     protected override void LoadComponents()
@@ -24,7 +25,7 @@ public class EnermyFly_2 : EnermyFly
         this.enermyShooting = transform.parent.GetComponentInChildren<EnermyShooting>();
     }
 
-    protected virtual void Chase()
+    protected override void Chase()
     {
         if (this.currentDis <= this.attackDis)
         {

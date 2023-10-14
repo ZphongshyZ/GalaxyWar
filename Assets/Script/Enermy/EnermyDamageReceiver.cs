@@ -37,6 +37,7 @@ public class EnermyDamageReceiver : DamageReceiver
     protected virtual string GetOnDeadFXName()
     {
         if (transform.parent.name == "Enermy_3") return FXSpawner.explosion2;
+        else if (transform.parent.name == "Boss_1") return FXSpawner.explosion3;
         return FXSpawner.explosion1;
     }
 

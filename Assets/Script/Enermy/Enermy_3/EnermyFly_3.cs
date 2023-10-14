@@ -22,9 +22,10 @@ public class EnermyFly_3 : EnermyFly
     {
         base.Update();
         this.Chase();
+        this.enermyKamikaze.Kamikaze(22f, 4f);
     }
 
-    protected virtual void Chase()
+    protected override void Chase()
     {
         if (this.currentDis <= this.attackDis)
         {

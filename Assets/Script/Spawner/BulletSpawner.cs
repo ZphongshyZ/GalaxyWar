@@ -9,6 +9,7 @@ public class BulletSpawner : Spawner
 
     public static string shipBullet = "ShipBullet";
     public static string enermyBullet_2 = "EnermyBullet";
+    public static string bossBullet = "BossBullet";
 
     protected override void Awake()
     {

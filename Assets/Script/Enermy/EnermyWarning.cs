@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class EnermyWarning : EnermyAttack
+public class EnermyWarning : PhongMonobehaviour
 {
     [SerializeField] protected GameObject enermyWarning;
 
@@ -18,29 +18,13 @@ public class EnermyWarning : EnermyAttack
         this.enermyWarning = GetComponent<EnermyWarning>().gameObject;
     }
 
-    //protected virtual void Warning()
-    //{
-    //    if (this.isAttacking == false)
-    //    {
-    //        this.enermyWarning.SetActive(true);
-    //        Debug.Log("Meteorite warning");
-    //    }
-    //    if (this.isAttacking == true)
-    //    {
-    //        this.enermyWarning.SetActive(false);
-    //        Debug.Log("Meteorite stop warning");
-    //    }
-    //}
-
     public virtual void Warning()
     {
         this.enermyWarning.SetActive(true);
-        Debug.Log("Meteorite warning");
     }
 
     public virtual void StopWarning()
     {
         this.enermyWarning.SetActive(false);
-        Debug.Log("Meteorite stop warning");
     }
 }

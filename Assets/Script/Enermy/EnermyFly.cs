@@ -6,8 +6,11 @@ public class EnermyFly : ObjectCanFly
 {
     [SerializeField] protected Transform zonePlayer;
 
-    [SerializeField] protected float attackDis = 4f;
-    protected float currentDis;
+    [SerializeField] protected float attackDis = 4.5f;
+    [SerializeField] protected float currentDis;
+    [SerializeField] protected float amplitude = 1f;
+    [SerializeField] protected float frequency = 1f;
+    [SerializeField] protected float phase = 0f;
 
     protected override void Update()
     {
@@ -36,5 +39,10 @@ public class EnermyFly : ObjectCanFly
     protected virtual void GetDistance()
     {
         this.currentDis = transform.position.y - this.zonePlayer.position.y;
+    }
+
+    protected virtual void Chase()
+    {
+        //For override
     }
 }
