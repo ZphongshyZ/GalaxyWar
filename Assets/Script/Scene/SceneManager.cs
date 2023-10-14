@@ -12,7 +12,7 @@ public class SceneManager : PhongMonobehaviour
 
     public virtual void GotoMainMenu()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("MenuScene");
     }
 
     public void QuitGame()

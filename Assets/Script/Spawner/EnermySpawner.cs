@@ -75,7 +75,7 @@ public class EnermySpawner : Spawner
 
     protected virtual void SpawnGame()
     {
-        if(this.level > 0 && this.level >= EnermySpawner.enermyNames.Length) this.BossSpawning();
+        if(this.level > 0 && this.level % 8 == 0) this.BossSpawning();
         this.EnermySpawning();
 
     }
