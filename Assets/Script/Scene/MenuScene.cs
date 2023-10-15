@@ -6,8 +6,6 @@ public class MenuScene : SceneManager
 {
     public void PlayGame()
     {
-        WinScene.Instance.IsWinning = false;
-        Time.timeScale = 1f;
         this.GotoScene("PlayScene");
     }
 

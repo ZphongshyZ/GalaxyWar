@@ -11,7 +11,7 @@ public class EnermyDeSpawn : DeSpawnByDis
         {
             EnermySpawner.Instance.bossCount--;
             EnermySpawner.Instance.level++;
-            WinScene.Instance.IsWinning = true;
+            GameOverScene.Instance.IsWinning = true;
         }
     }
 }

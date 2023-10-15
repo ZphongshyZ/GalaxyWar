@@ -13,13 +13,13 @@ public class EnermySpawner : Spawner
 
     public static List<string> enermyLevel = new List<string>();
 
-    [SerializeField] protected float spawnDelay = 7.5f;
+    [SerializeField] protected float spawnDelay;
     [SerializeField] protected float spawnDelayMin = 4f;
     [SerializeField] protected float spawnTime = 0f;
     [SerializeField] public int bossCount = 0;
-    [SerializeField] public int level = 0;
-    [SerializeField] protected int count = 0;
-    [SerializeField] protected int nextCount = 5;
+    [SerializeField] public int level;
+    [SerializeField] protected int count;
+    [SerializeField] protected int nextCount;
 
     protected override void Start()
     {
@@ -35,7 +35,7 @@ public class EnermySpawner : Spawner
         EnermySpawner.enermyLevel.Clear();
         this.level = 0;
         this.count = 0;
-        this.nextCount = 5;
+        this.nextCount = 3;
         this.spawnDelay = 7.5f;
     }
 
@@ -53,7 +53,6 @@ public class EnermySpawner : Spawner
             if (this.level +1 >= EnermySpawner.enermyNames.Length)
             {
                 this.level++;
-                Debug.Log("Level: " + this.level);
                 this.nextCount += 1;
                 this.count = 0;
                 this.spawnDelay -= 0.5f;
@@ -63,11 +62,9 @@ public class EnermySpawner : Spawner
             {
                 this.level++;
                 EnermySpawner.enermyLevel.Add(enermyNames[this.level]);
-                Debug.Log("Add Enermy: " + EnermySpawner.enermyNames[this.level]);
                 this.count = 0;
                 this.spawnDelay -= 0.8f;
                 this.nextCount += 1;
-                Debug.Log("Level: " + this.level);
                 if (this.spawnDelay <= this.spawnDelayMin) this.spawnDelay = this.spawnDelayMin;
             }
         }
@@ -75,7 +72,7 @@ public class EnermySpawner : Spawner
 
     protected virtual void SpawnGame()
     {
-        if (WinScene.Instance.IsWinning == true || LoseScene.Instance.IsLossing == true) return;
+        if (GameOverScene.Instance.IsWinning == true || GameOverScene.Instance.IsLossing == true) return;
         if(this.level > 0 && this.level % 8 == 0) this.BossSpawning();
         this.EnermySpawning();
 

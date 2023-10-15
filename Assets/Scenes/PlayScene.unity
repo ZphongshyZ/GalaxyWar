@@ -1151,7 +1151,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1348318736}
-        m_TargetAssemblyTypeName: WinScene, Assembly-CSharp
+        m_TargetAssemblyTypeName: GameOverScene, Assembly-CSharp
         m_MethodName: Continues
         m_Mode: 1
         m_Arguments:
@@ -4745,7 +4745,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1348318737}
+      - m_Target: {fileID: 1348318736}
         m_TargetAssemblyTypeName: SceneManager, Assembly-CSharp
         m_MethodName: QuitGame
         m_Mode: 1
@@ -5438,9 +5438,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1348318737}
-        m_TargetAssemblyTypeName: SceneManager, Assembly-CSharp
-        m_MethodName: GotoMainMenu
+      - m_Target: {fileID: 1348318736}
+        m_TargetAssemblyTypeName: GameOverScene, Assembly-CSharp
+        m_MethodName: Continues
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7386,8 +7386,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1348318737}
-        m_TargetAssemblyTypeName: LoseScene, Assembly-CSharp
+      - m_Target: {fileID: 1348318736}
+        m_TargetAssemblyTypeName: GameOverScene, Assembly-CSharp
         m_MethodName: Restart
         m_Mode: 1
         m_Arguments:
@@ -8006,7 +8006,6 @@ GameObject:
   - component: {fileID: 1348318731}
   - component: {fileID: 1348318735}
   - component: {fileID: 1348318736}
-  - component: {fileID: 1348318737}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -8124,27 +8123,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1348318730}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7235b03c9eefd884ab33a82f643bcd57, type: 3}
+  m_Script: {fileID: 11500000, guid: 5fa38259a6c94754991b608120ba5925, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   winScene: {fileID: 1093277045}
-  scoreText: {fileID: 693809331}
+  winScoreText: {fileID: 693809331}
   isWinning: 0
---- !u!114 &1348318737
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1348318730}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d653c9e84e108c4ea568b2b598d1fc4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isLossing: 0
   loseScene: {fileID: 436305762}
-  scoreText: {fileID: 1722790498}
+  loseScoreText: {fileID: 1722790498}
+  isLossing: 0
 --- !u!1 &1351966858
 GameObject:
   m_ObjectHideFlags: 0

@@ -21,7 +21,7 @@ public class ShipDamageReiceiver : DamageReceiver
     {
         this.OnDeadFX();
         this.playerDespawn.DeSpawnObj();
-        LoseScene.Instance.IsLossing = true;
+        GameOverScene.Instance.IsLossing = true;
     }
 
     protected virtual void OnDeadFX()
