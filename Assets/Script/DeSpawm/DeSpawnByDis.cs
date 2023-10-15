@@ -4,10 +4,14 @@ using UnityEngine;
 
 public class DeSpawnByDis : DeSpawner
 {
+    //Properties
     [SerializeField] protected float dislimit = 70f;
     [SerializeField] protected float distance = 0f;
+
+    //GameObj
     [SerializeField] protected Transform mainCam;
 
+    //LoadComponents
     protected override void LoadComponents()
     {
         base.LoadComponents();
@@ -21,6 +25,7 @@ public class DeSpawnByDis : DeSpawner
         Debug.Log(transform.parent.name + ":LoadCamera");
     }
 
+    //DeSpawn
     protected override bool CanDeSpawn()
     {
         this.distance = Vector3.Distance(transform.position, this.mainCam.position);

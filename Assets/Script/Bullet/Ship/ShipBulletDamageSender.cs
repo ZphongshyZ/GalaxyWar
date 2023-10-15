@@ -14,6 +14,7 @@ public class ShipBulletDamageSender : BulletDamageSender
         }
     }
 
+    //Spawn Impact
     protected virtual void SpawnImpactFX(Collider other)
     {
         string fXName = this.GetImpactFX();

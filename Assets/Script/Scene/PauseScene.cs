@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class PauseScene : SceneManager
 {
+    //GameObj
     [SerializeField] protected GameObject pauseMenu;
+    
+    //Properties
     public bool isPaused;
 
+    //LoadComponents
     protected override void LoadComponents()
     {
         base.LoadComponents();
@@ -18,6 +22,7 @@ public class PauseScene : SceneManager
         this.pauseMenu = GameObject.Find("PauseScene");
     }
 
+    //PauseScene
     protected override void Start()
     {
         base.Start();

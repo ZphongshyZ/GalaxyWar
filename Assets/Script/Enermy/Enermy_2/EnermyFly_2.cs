@@ -5,15 +5,10 @@ using UnityEngine;
 
 public class EnermyFly_2 : EnermyFly
 {
+    //Components
     [SerializeField] protected EnermyShooting enermyShooting;
 
-    protected override void Update()
-    {
-        base.Update();
-        this.Chase();
-        this.enermyShooting.Shoot(BulletSpawner.enermyBullet_2, Random.Range(3f,5f));
-    }
-
+    //LoadComponents
     protected override void LoadComponents()
     {
         base.LoadComponents();
@@ -23,6 +18,14 @@ public class EnermyFly_2 : EnermyFly
     protected virtual void LoadEnermyShooting()
     {
         this.enermyShooting = transform.parent.GetComponentInChildren<EnermyShooting>();
+    }
+
+    //EnermyFly
+    protected override void Update()
+    {
+        base.Update();
+        this.Chase();
+        this.enermyShooting.Shoot(BulletSpawner.enermyBullet_2, Random.Range(3f, 5f));
     }
 
     protected override void Chase()

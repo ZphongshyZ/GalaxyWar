@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class EnermyFly_5 : EnermyFly
 {
-    private float startingYPos;
+    //Properties
+    [SerializeField] private float startingYPos;
 
+    //EnermyFly
     protected override void ResetValue()
     {
         base.ResetValue();

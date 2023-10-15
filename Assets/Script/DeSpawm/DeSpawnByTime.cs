@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class DeSpawnByTime : DeSpawner
 {
+    //Properties
     [SerializeField] protected float delay = 2f;
     [SerializeField] protected float timer = 0f;
 
+
+    //DeSpawn
     protected override void OnEnable()
     {
         base.OnEnable();

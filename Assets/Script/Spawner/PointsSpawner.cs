@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class PointsSpawner : Spawner
 {
+    //Singleton
     private static PointsSpawner instance;
     public static PointsSpawner Instance { get => instance; }
 
+    //Properties
     public static string coin_1 = "Coin_1";
     public static string dinamond_1 = "Dinamond_1";
     public static string dinamond_2 = "Dinamond_2";
@@ -19,6 +21,7 @@ public class PointsSpawner : Spawner
         PointsSpawner.instance = this;
     }
 
+    //PointSpawner System
     public virtual void Drop(List<DropRate> dropList, Vector3 pos, Quaternion rot)
     {
         int itemNum = GachaItem(dropList);

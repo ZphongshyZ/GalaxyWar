@@ -6,14 +6,18 @@ using UnityEngine.UI;
 
 public class PointManager : PhongMonobehaviour
 {
+    //Singleton
     protected static PointManager instance;
     public static PointManager Instance { get => instance; }
 
+    //GameObj
     [SerializeField] protected Text pointText;
     public Text PointText => pointText;
 
+    //Properties
     public int point = 0;
 
+    //PointManager System
     protected override void Awake()
     {
         base.Awake();

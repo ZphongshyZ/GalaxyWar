@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BulletSpawner : Spawner
 {
+    //Singleton
     private static BulletSpawner instance;
     public static BulletSpawner Instance { get => instance; }
 

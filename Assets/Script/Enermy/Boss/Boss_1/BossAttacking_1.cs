@@ -15,19 +15,15 @@ public class BossAttacking_1 : EnermyAttack
     [SerializeField] protected float timeShoot = 7f;
     [SerializeField] protected bool isShooting = false;
 
-    //Kamikaze
+    //ShootGun
     [Header("==Boss ShootGun==")]
     [SerializeField] protected Transform bossShootGun;
     [SerializeField] protected bool isShootGun = false;
 
+    //Properties
     protected string[] attackName = {"Shoot", "ShootGun"};
 
-    protected override void OnEnable()
-    {
-        base.OnEnable();
-        this.timeShoot = 0f;
-    }
-
+    //LoadComponents
     protected override void LoadComponents()
     {
         base.LoadComponents();
@@ -45,6 +41,14 @@ public class BossAttacking_1 : EnermyAttack
         this.bossGun = GameObject.Find("BossGun").transform;
         this.bossShootGun = GameObject.Find("BossShootGun").transform;
         this.bossShooting = transform.parent.GetComponentInChildren<EnermyShooting>();
+    }
+
+
+    //Boss Atatck
+    protected override void OnEnable()
+    {
+        base.OnEnable();
+        this.timeShoot = 0f;
     }
 
     public virtual void Attack()

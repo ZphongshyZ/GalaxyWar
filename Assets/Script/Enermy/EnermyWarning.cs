@@ -5,8 +5,10 @@ using UnityEngine;
 
 public class EnermyWarning : PhongMonobehaviour
 {
+    //GameObj
     [SerializeField] protected GameObject enermyWarning;
 
+    //LoadComponents
     protected override void LoadComponents()
     {
         base.LoadComponents();
@@ -18,6 +20,7 @@ public class EnermyWarning : PhongMonobehaviour
         this.enermyWarning = GetComponent<EnermyWarning>().gameObject;
     }
 
+    //EnermyWarning
     public virtual void Warning()
     {
         this.enermyWarning.SetActive(true);

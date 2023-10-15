@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class BossFly : EnermyFly
 {
+    //Components
     [SerializeField] protected BossAttacking_1 bossAttacking;
 
+    //LoadComponents
     protected override void LoadComponents()
     {
         base.LoadComponents();
@@ -17,6 +19,7 @@ public class BossFly : EnermyFly
         this.bossAttacking = transform.parent.GetComponentInChildren<BossAttacking_1>();
     }
 
+    //BossFly
     protected override void ResetValue()
     {
         base.ResetValue();

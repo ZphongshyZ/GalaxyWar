@@ -17,6 +17,7 @@ public class SpawnPoint : PhongMonobehaviour
         SpawnPoint.instance = this;
     }
 
+    //LoadComponents
     protected override void LoadComponents()
     {
         base.LoadComponents();
@@ -33,6 +34,7 @@ public class SpawnPoint : PhongMonobehaviour
         Debug.Log(transform.name + " LoadPoints", gameObject);
     }
 
+    //SpawnPoint
     public virtual Transform GetRandom()
     {
         int rand = Random.Range(0, this.points.Count);

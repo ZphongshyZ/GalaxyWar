@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class MeteoriteFly : EnermyFly
 {
-    [SerializeField] protected bool isTargeting;
+    //Components
     [SerializeField] protected EnermyWarning enermyWarning;
 
+    //Properties
+    [SerializeField] protected bool isTargeting;
     [SerializeField] protected  float time = 0f;
     [SerializeField] protected  float timeDelay = 5f;
 
+    //MeteoriteFly
     protected override void ResetValue()
     {
         base.ResetValue();

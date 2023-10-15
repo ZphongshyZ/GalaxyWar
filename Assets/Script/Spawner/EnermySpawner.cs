@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class EnermySpawner : Spawner
 {
+    //Singleton
     private static EnermySpawner instance;
     public static EnermySpawner Instance { get => instance; }
 
+    //List Enermy
     public static string[] enermyNames = new string[] { "Enermy_1", "Enermy_2", "Enermy_3", "Meteorite",  "Enermy_4", "Enermy_5", "Enermy_4.5", "Enermy_5.5"};
 
     public static string[] bossNames = new string[] { "Boss_1", "Boss_1" };
 
     public static List<string> enermyLevel = new List<string>();
 
+    //Properties
     [SerializeField] protected float spawnDelay;
     [SerializeField] protected float spawnDelayMin = 4f;
     [SerializeField] protected float spawnTime = 0f;
@@ -21,6 +24,7 @@ public class EnermySpawner : Spawner
     [SerializeField] protected int count;
     [SerializeField] protected int nextCount;
 
+    //EnermySpawn System
     protected override void Start()
     {
         base.Start();

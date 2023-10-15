@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class ShipMovement : MonoBehaviour
 {
+    //Properties
     [SerializeField] protected Vector3 targetPos;
     [SerializeField] protected float speed = 0.3f;
 
+    //ShipMovement
     private void FixedUpdate()
     {
         this.GetTargetPos();

@@ -5,15 +5,17 @@ using UnityEngine.UIElements;
 
 public class BackgroundManager : PhongMonobehaviour
 {
+    //GameObj
     [SerializeField] protected Transform zone;
 
+    //Properties
     [SerializeField] protected float movespeed = 1f;
     [SerializeField] protected Vector3 direction = Vector3.down;
-
     [SerializeField] protected float currentDis;
     [SerializeField] protected float limitDis = 25f;
     [SerializeField] protected float reSpawnDis = 40.95f*2;
 
+    //LoadComponents
     protected override void LoadComponents()
     {
         base.LoadComponents();
@@ -25,6 +27,7 @@ public class BackgroundManager : PhongMonobehaviour
         this.zone = GameObject.Find("Zone").transform;
     }
 
+    //Parralax
     protected void Update()
     {
         this.Run();

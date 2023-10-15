@@ -5,8 +5,10 @@ using UnityEngine;
 
 public class EnermyFly_3 : EnermyFly
 {
+    //Components
     [SerializeField] protected EnermyKamikaze enermyKamikaze;
 
+    //LoadComponents
     protected override void LoadComponents()
     {
         base.LoadComponents();
@@ -18,6 +20,7 @@ public class EnermyFly_3 : EnermyFly
         this.enermyKamikaze = transform.parent.GetComponentInChildren<EnermyKamikaze>();
     }
 
+    //EnermyFly
     protected override void Update()
     {
         base.Update();

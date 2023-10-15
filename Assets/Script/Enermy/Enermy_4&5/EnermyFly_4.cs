@@ -4,19 +4,21 @@ using UnityEngine;
 
 public class EnermyFly_4 : EnermyFly
 {
-    private float startingYPos;
+    //Properties
+    [SerializeField] private float startingYPos;
+
+    //EnermyFly
+    protected override void OnEnable()
+    {
+        base.OnEnable();
+        this.startingYPos = transform.position.y;
+    }
 
     protected override void ResetValue()
     {
         base.ResetValue();
         this.direction = Vector3.right;
         this.movespeed = 1.5f;
-    }
-
-    protected override void OnEnable()
-    {
-        base.OnEnable();
-        this.startingYPos = transform.position.y;
     }
 
     protected override void Fly()

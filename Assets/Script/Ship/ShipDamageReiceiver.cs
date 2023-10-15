@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class ShipDamageReiceiver : DamageReceiver
 {
+    //Components
     [SerializeField] protected DeSpawnByDis playerDespawn;
 
+    //LoadComponents
     protected override void LoadComponents()
     {
         base.LoadComponents();
@@ -17,6 +19,7 @@ public class ShipDamageReiceiver : DamageReceiver
         this.playerDespawn = transform.parent.GetComponentInChildren<DeSpawnByDis>();
     }
 
+    //ShipDamageReceiver
     protected override void OnDead()
     {
         this.OnDeadFX();
@@ -24,6 +27,13 @@ public class ShipDamageReiceiver : DamageReceiver
         GameOverScene.Instance.IsLossing = true;
     }
 
+    public override void Reborn()
+    {
+        this.hpMax = this.enermySO.hpMax;
+        base.Reborn();
+    }
+
+    //Impact
     protected virtual void OnDeadFX()
     {
         string fxName = this.GetOnDeadFXName();
@@ -36,11 +46,5 @@ public class ShipDamageReiceiver : DamageReceiver
         if (transform.parent.name == "Enermy_3") return FXSpawner.explosion2;
         else if (transform.parent.name == "Boss_1") return FXSpawner.explosion3;
         return FXSpawner.explosion1;
-    }
-
-    public override void Reborn()
-    {
-        this.hpMax = this.enermySO.hpMax;
-        base.Reborn();
     }
 }

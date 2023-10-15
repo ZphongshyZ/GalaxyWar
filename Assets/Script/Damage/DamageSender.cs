@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class DamageSender : PhongMonobehaviour
 {
+    //Properties
     [SerializeField] protected int dame = 1;
 
+    //DamageSender System
     public virtual void Send(Transform obj)
     {
         DamageReceiver damageReceiver = obj.GetComponentInChildren<DamageReceiver>();

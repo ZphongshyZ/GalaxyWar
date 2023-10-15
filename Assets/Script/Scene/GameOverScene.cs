@@ -21,6 +21,7 @@ public class GameOverScene : SceneManager
     [SerializeField] protected bool isLossing = false;
     public bool IsLossing { get => isLossing; set => isLossing = value; }
 
+    //LoadComponents
     protected override void LoadComponents()
     {
         base.LoadComponents();
@@ -33,6 +34,7 @@ public class GameOverScene : SceneManager
         this.loseScene = GameObject.Find("LoseScene");
     }
 
+    //GameOverScene
     protected override void Awake()
     {
         base.Awake();

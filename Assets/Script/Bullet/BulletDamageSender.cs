@@ -5,6 +5,8 @@ using UnityEngine;
 public class BulletDamageSender : DamageSender
 {
     [SerializeField] protected BulletDeSpawn bulletDeSpawn;
+
+    //LoadComponents
     protected override void LoadComponents()
     {
         base.LoadComponents();
@@ -16,6 +18,7 @@ public class BulletDamageSender : DamageSender
         bulletDeSpawn = transform.parent.GetComponentInChildren<BulletDeSpawn>();
     }
 
+    //Send Damage
     public override void Send(DamageReceiver damageReceiver)
     {
         base.Send(damageReceiver);

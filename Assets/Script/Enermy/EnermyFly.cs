@@ -4,20 +4,17 @@ using UnityEngine;
 
 public class EnermyFly : ObjectCanFly
 {
+    //GameObj
     [SerializeField] protected Transform zonePlayer;
 
+    //Properties
     [SerializeField] protected float attackDis = 4.5f;
     [SerializeField] protected float currentDis;
     [SerializeField] protected float amplitude = 1f;
     [SerializeField] protected float frequency = 1f;
     [SerializeField] protected float phase = 0f;
 
-    protected override void Update()
-    {
-        base.Update();
-        this.GetDistance();
-    }
-
+    //LoadComponents
     protected override void LoadComponents()
     {
         base.LoadComponents();
@@ -27,6 +24,13 @@ public class EnermyFly : ObjectCanFly
     protected virtual void LoadShipPlayer()
     {
         this.zonePlayer = GameObject.Find("Zone").transform;
+    }
+
+    //EnermyFly
+    protected override void Update()
+    {
+        base.Update();
+        this.GetDistance();
     }
 
     protected override void ResetValue()

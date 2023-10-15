@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class PointReceived : PhongMonobehaviour
 {
+    //Components
     [SerializeField] protected  PointDespawn coinDespawn;
     [SerializeField] protected PointSO pointSO;
 
+    //LoadComponents
     protected override void LoadComponents()
     {
         base.LoadComponents();
@@ -27,6 +29,7 @@ public class PointReceived : PhongMonobehaviour
         coinDespawn = transform.parent.GetComponentInChildren<PointDespawn>();
     }
 
+    //PointReceived
     protected virtual void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag("Player"))

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class FXSpawner : Spawner
 {
+    //Singleton
     private static FXSpawner instance;
     public static FXSpawner Instance { get => instance; }
 

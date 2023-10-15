@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class EnermyDamageReceiver : DamageReceiver
 {
+    //Properties
     [SerializeField] protected EnermyDeSpawn enermyDeSpawn;
 
+    //LoadComponents
     protected override void LoadComponents()
     {
         base.LoadComponents();
@@ -17,6 +19,7 @@ public class EnermyDamageReceiver : DamageReceiver
         enermyDeSpawn = transform.parent.GetComponentInChildren<EnermyDeSpawn>();
     }
 
+    //EnermyDamageReceiver System
     protected override void OnDead()
     {
         this.OnDeadFX();
@@ -27,6 +30,13 @@ public class EnermyDamageReceiver : DamageReceiver
         PointsSpawner.Instance.Drop( this.enermySO.dropList ,dropPos, dropRot);
     }
 
+    public override void Reborn()
+    {
+        this.hpMax = this.enermySO.hpMax;
+        base.Reborn();
+    }
+
+    //Impact
     protected virtual void OnDeadFX()
     {
         string fxName = this.GetOnDeadFXName();
@@ -39,11 +49,5 @@ public class EnermyDamageReceiver : DamageReceiver
         if (transform.parent.name == "Enermy_3") return FXSpawner.explosion2;
         else if (transform.parent.name == "Boss_1") return FXSpawner.explosion3;
         return FXSpawner.explosion1;
-    }
-
-    public override void Reborn()
-    {
-        this.hpMax = this.enermySO.hpMax;
-        base.Reborn();
     }
 }

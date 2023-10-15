@@ -6,16 +6,12 @@ public abstract class DamageReceiver : PhongMonobehaviour
 {
     [SerializeField] protected EnermySO enermySO;
 
+    //Properties
     [SerializeField] protected int hp = 1;
     [SerializeField] protected int hpMax = 1;
     [SerializeField] protected bool isDead = false;
 
-    protected override void OnEnable()
-    {
-        base.OnEnable();
-        this.Reborn();
-    }
-
+    //LoadComponents
     protected override void LoadComponents()
     {
         base.LoadComponents();
@@ -28,6 +24,14 @@ public abstract class DamageReceiver : PhongMonobehaviour
         string resPath = "Enermy/" + transform.parent.name;
         this.enermySO = Resources.Load<EnermySO>(resPath);
         Debug.Log(transform.name + " LoadEnermySO " + resPath, gameObject);
+    }
+
+
+    //DamageReceive System
+    protected override void OnEnable()
+    {
+        base.OnEnable();
+        this.Reborn();
     }
 
     public virtual void Reborn()
