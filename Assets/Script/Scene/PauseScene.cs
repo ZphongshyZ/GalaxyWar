@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PauseMenu : SceneManager
+public class PauseScene : SceneManager
 {
     [SerializeField] protected GameObject pauseMenu;
     public bool isPaused;

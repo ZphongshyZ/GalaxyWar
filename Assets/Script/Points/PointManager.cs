@@ -9,7 +9,9 @@ public class PointManager : PhongMonobehaviour
     protected static PointManager instance;
     public static PointManager Instance { get => instance; }
 
-    public Text pointText;
+    [SerializeField] protected Text pointText;
+    public Text PointText => pointText;
+
     public int point = 0;
 
     protected override void Awake()
