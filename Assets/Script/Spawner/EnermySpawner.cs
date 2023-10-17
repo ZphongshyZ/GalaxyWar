@@ -49,7 +49,6 @@ public class EnermySpawner : Spawner
         this.SetLevel();
     }
 
-
     protected virtual void SetLevel()
     {
         if (this.count == this.nextCount)

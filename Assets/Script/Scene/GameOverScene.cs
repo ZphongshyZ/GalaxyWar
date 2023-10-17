@@ -80,6 +80,6 @@ public class GameOverScene : SceneManager
 
     public virtual void Continues()
     {
-        this.GotoMainMenu();
+        this.GotoScene("SaveHighScore");
     }
 }
