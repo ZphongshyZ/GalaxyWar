@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Data;
 using System.IO;
 using UnityEngine;
 
@@ -9,15 +10,22 @@ public class HighScoreData : PhongMonobehaviour
     public string playerName;
     public int score;
     public string filePath;
-    protected string data;
+    public string fileName = "HightScore.txt";
 
     protected override void Start()
     {
         base.Start();
-        string folderPath = "Assets/Data";
-        string fileName = "HighScore.txt";
-        string fullPath = Path.Combine(folderPath, fileName);
+        this.CreateData();
+    }
+
+    public virtual void CreateData()
+    {
+        string fullPath = Path.Combine(Application.dataPath, fileName);
         this.filePath = fullPath;
+        if(!File.Exists(filePath))
+        {
+            File.Create(filePath); 
+        }
     }
 
     public virtual void SaveData()
@@ -25,7 +33,7 @@ public class HighScoreData : PhongMonobehaviour
         this.playerName = PointSave.Instance.SaveName;
         this.score = PointSave.Instance.SaveScore;
 
-        this.data += this.playerName + "\n" + this.score.ToString() + "\n";
-        File.AppendAllText(this.filePath, data);
+        string data = this.playerName + "\n" + this.score.ToString() + "\n";
+        File.AppendAllText(filePath, data);
     }
 }

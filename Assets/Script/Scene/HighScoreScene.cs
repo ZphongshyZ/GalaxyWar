@@ -2,9 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
-using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class HighScoreScene : SceneManager
 {
@@ -15,23 +13,31 @@ public class HighScoreScene : SceneManager
 
     //Properties
     public string filePath;
-    protected List<Player> topPlayer = new List<Player> { new Player { Name = "", Score = 0 },
-                                                          new Player { Name = "", Score = 0 },
-                                                          new Player { Name = "", Score = 0 }};
+    public string fileName = "HighScore.txt";
+    protected List<Player> topPlayer = new List<Player> { new Player { Name = "Robot", Score = 0 },
+                                                          new Player { Name = "Robot", Score = 0 },
+                                                          new Player { Name = "Robot", Score = 0 }};
 
     protected List<Player> players = new List<Player> ();
+
+    protected override void Awake()
+    {
+        base.Awake();
+        string path = Path.Combine(Application.dataPath, this.fileName);
+        if (!File.Exists(path))
+        {
+            File.Create(path);
+        }
+    }
 
     protected override void Start()
     {
         base.Start();
-        string folderPath = "Assets/Data";
-        string fileName = "HighScore.txt";
-        string fullPath = Path.Combine(folderPath, fileName);
+        string fullPath = Path.Combine(Application.dataPath, fileName);
         this.filePath = fullPath;
         this.ReadData();
         this.SetRank();
         this.Display();
-        Debug.Log(this.players.Count);
     }
 
     protected virtual void Display()
@@ -45,7 +51,8 @@ public class HighScoreScene : SceneManager
     {
         //Read Data
         string[] data = File.ReadAllLines(filePath);
-        for(int i = 0; i < data.Length; i += 2)
+        if (data.Length == 0) return;
+        for (int i = 0; i < data.Length; i += 2)
         {
             Player newPlayer = new Player();
             for(int j = i; j <= i + 1; j++)
@@ -61,7 +68,16 @@ public class HighScoreScene : SceneManager
 
     protected virtual void SetRank()
     {
-        for(int i = 0; i < 3; i++)
+        if(this.players.Count == 0) return;
+        if(this.players.Count < 3 && this.players.Count > 0)
+        {
+            for(int i = 0; i < this.players.Count; i++)
+            {
+                this.topPlayer[i] = this.players[i];
+            }
+            return;
+        }
+        for(int i = 0; i < this.topPlayer.Count; i++)
         {
             this.topPlayer[i] = this.players[i];
         }
