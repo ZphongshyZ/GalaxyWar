@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -25,7 +25,7 @@ public class EnermyShooting : EnermyAttack
         newBullet.gameObject.SetActive(true);
     }
 
-    public virtual void ShootGun(string bulletName, float shootDelay, Vector3 pos, Quaternion rot)
+    public virtual void ShootGun(string bulletName, float shootDelay, Vector3 pos, Quaternion rot, float bulletSpread, int bulletCount)
     {
         if (!isAttacking) return;
         this.attackTime += Time.deltaTime;
@@ -33,13 +33,13 @@ public class EnermyShooting : EnermyAttack
         if (this.attackTime < this.attackDelay) return;
         this.attackTime = 0f;
         Vector3 spawnPos = pos;
-        spawnPos.x = pos.x - 0.1f;
-        Quaternion rotation = rot;
-        rotation.z = rot.z - 1f;
-        for(int i = 0; i < 10; i++)
+        Quaternion rotation = Quaternion.Euler(0f, 0f, bulletSpread);
+        float Spread = bulletSpread;
+        for (int i = 0; i < bulletCount; i++)
         {
-            spawnPos.x += 0.01f;
-            rotation.z += 0.1f;
+            spawnPos.x -= 0.01f;
+            bulletSpread -= (Spread / 5 );
+            rotation = Quaternion.Euler(0f, 0f, bulletSpread);
             Transform newBullet = BulletSpawner.Instance.Spawn(bulletName, spawnPos, rotation);
             if (newBullet == null) return;
             newBullet.gameObject.SetActive(true);

@@ -75,9 +75,10 @@ public class EnermySpawner : Spawner
 
     protected virtual void SpawnGame()
     {
-        if (GameOverScene.Instance.IsWinning == true || GameOverScene.Instance.IsLossing == true) return;
-        if(this.level > 0 && this.level % 8 == 0) this.BossSpawning();
-        this.EnermySpawning();
+        //if (GameOverScene.Instance.IsWinning == true || GameOverScene.Instance.IsLossing == true) return;
+        //if(this.level > 0 && this.level % 8 == 0) this.BossSpawning();
+        //this.EnermySpawning();
+        this.BossSpawning();
 
     }
 

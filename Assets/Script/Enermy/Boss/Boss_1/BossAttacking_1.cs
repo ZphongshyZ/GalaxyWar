@@ -105,7 +105,7 @@ public class BossAttacking_1 : EnermyAttack
     {
         Quaternion rot = bossShootGun.rotation;
         Vector3 pos = bossShootGun.position;
-        this.bossShooting.ShootGun(BulletSpawner.enermyBullet_2, 0.5f, pos, rot);
+        this.bossShooting.ShootGun(BulletSpawner.enermyBullet_2, 0.5f, pos, rot, 60f, 9);
         timeShoot -= Time.deltaTime;
         if (timeShoot <= 0)
         {
