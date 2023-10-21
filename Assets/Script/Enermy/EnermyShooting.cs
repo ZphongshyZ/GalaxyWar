@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class EnermyShooting : EnermyAttack
 {
-    public virtual void Shoot(string bulletName, float shootDelay)
+    public virtual void Shoot(string bulletName, Vector3 pos, Quaternion rot)
     {
-        Vector3 spawnPos = transform.position;
-        Quaternion rotation = transform.parent.rotation;
-        this.Shoot(bulletName, shootDelay, spawnPos, rotation);
+        if (!isAttacking) return;
+        Vector3 spawnPos = pos;
+        Quaternion rotation = rot;
+        Transform newBullet = BulletSpawner.Instance.Spawn(bulletName, spawnPos, rotation);
+        if (newBullet == null) return;
+        newBullet.gameObject.SetActive(true);
     }
 
     public virtual void Shoot(string bulletName, float shootDelay, Vector3 pos, Quaternion rot)
@@ -18,11 +21,7 @@ public class EnermyShooting : EnermyAttack
         this.attackDelay = shootDelay;
         if (this.attackTime < this.attackDelay) return;
         this.attackTime = 0f;
-        Vector3 spawnPos = pos;
-        Quaternion rotation = rot;
-        Transform newBullet = BulletSpawner.Instance.Spawn(bulletName, spawnPos, rotation);
-        if (newBullet == null) return;
-        newBullet.gameObject.SetActive(true);
+        this.Shoot(bulletName, pos, rot);
     }
 
     public virtual void ShootGun(string bulletName, float shootDelay, Vector3 pos, Quaternion rot, float bulletSpread, int bulletCount)

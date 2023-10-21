@@ -33,12 +33,12 @@ public class EnermyFly_3 : EnermyFly
         if (this.currentDis <= this.attackDis)
         {
             this.isFlying = false;
-            this.enermyKamikaze.SetIsAttacking(!this.isFlying);
+            this.enermyKamikaze.IsAttacking = !this.isFlying;
         }
         else
         {
             this.isFlying = true;
-            this.enermyKamikaze.SetIsAttacking(!this.isFlying);
+            this.enermyKamikaze.IsAttacking = !this.isFlying;
             this.ResetValue();
         }
     }

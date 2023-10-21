@@ -38,12 +38,12 @@ public class BossFly : EnermyFly
         if (this.currentDis <= this.attackDis)
         {
             this.isFlying = false;
-            this.bossAttacking.SetIsAttacking(!isFlying);
+            this.bossAttacking.IsAttacking = !this.isFlying;
         }
         else
         {
             this.isFlying = true;
-            this.bossAttacking.SetIsAttacking(!isFlying);
+            this.bossAttacking.IsAttacking = !this.isFlying;
         }
     }
 }

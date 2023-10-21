@@ -29,7 +29,7 @@ public class ShipShooting : PhongMonobehaviour
         Vector3 spawnPos = transform.position;
         Quaternion rotation = transform.parent.rotation;
         rotation.z = 180f;
-        Transform newBullet = BulletSpawner.Instance.Spawn(BulletSpawner.shipBullet, spawnPos, rotation);
+        Transform newBullet = BulletSpawner.Instance.Spawn(BulletSpawner.bullet_1, spawnPos, rotation);
         if (newBullet == null) return;
         newBullet.gameObject.SetActive(true);
     }

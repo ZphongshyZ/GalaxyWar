@@ -25,7 +25,7 @@ public class EnermyFly_2 : EnermyFly
     {
         base.Update();
         this.Chase();
-        this.enermyShooting.Shoot(BulletSpawner.enermyBullet_2, Random.Range(3f, 5f));
+        this.enermyShooting.Shoot(BulletSpawner.bullet_2, Random.Range(3f, 5f), transform.position, transform.rotation);
     }
 
     protected override void Chase()
@@ -33,12 +33,12 @@ public class EnermyFly_2 : EnermyFly
         if (this.currentDis <= this.attackDis)
         {
             this.isFlying = false;
-            this.enermyShooting.SetIsAttacking(!this.isFlying);
+            this.enermyShooting.IsAttacking = !this.isFlying;
         }
         else
         {
             this.isFlying = true;
-            this.enermyShooting.SetIsAttacking(!this.isFlying);
+            this.enermyShooting.IsAttacking = !this.isFlying;
         }
     }
 }

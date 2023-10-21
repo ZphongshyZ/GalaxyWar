@@ -12,7 +12,7 @@ public class BossAttacking_1 : EnermyAttack
     [SerializeField] protected Transform bossGun;
     [SerializeField] protected Transform target;
 
-    [SerializeField] protected float timeShoot = 7f;
+    [SerializeField] protected float timeShoot;
     [SerializeField] protected bool isShooting = false;
 
     //ShootGun
@@ -20,8 +20,13 @@ public class BossAttacking_1 : EnermyAttack
     [SerializeField] protected Transform bossShootGun;
     [SerializeField] protected bool isShootGun = false;
 
+    //ShotSpecial
+    [Header("==Shoot Special==")]
+    [SerializeField] protected bool isShootSpecial = false;
+    [SerializeField] protected int shootCount;
+
     //Properties
-    protected string[] attackName = {"Shoot", "ShootGun"};
+    protected string[] attackName = { "Shoot", "ShootGun", "ShotSpecial" };
 
     //LoadComponents
     protected override void LoadComponents()
@@ -53,17 +58,23 @@ public class BossAttacking_1 : EnermyAttack
 
     public virtual void Attack()
     {
-        if (isShooting == true)
+        if (this.isShooting == true)
         {
             this.attackTime = 0f;
-            this.bossShooting.SetIsAttacking(isShooting);
+            this.bossShooting.IsAttacking = this.isShooting;
             this.Shoot();
         }
-        if(isShootGun == true)
+        if (this.isShootGun == true)
         {
             this.attackTime = 0f;
-            this.bossShooting.SetIsAttacking(isShootGun);
+            this.bossShooting.IsAttacking = this.isShootGun;
             this.ShootGun();
+        }
+        if (this.isShootSpecial == true)
+        {
+            this.attackTime = 0;
+            this.bossShooting.IsAttacking = this.isShootSpecial;
+            this.ShootSpecial();
         }
         if (!isAttacking) return;
         this.attackTime += Time.deltaTime;
@@ -71,33 +82,41 @@ public class BossAttacking_1 : EnermyAttack
         if (this.attackTime < this.attackDelay) return;
         this.attackTime = 0f;
         int attack = Random.Range(0, this.attackName.Length);
-        if(attack == 0)
+        Debug.Log(attackName[attack]);
+        if (this.attackName[attack] == "Shoot")
         {
             this.isShooting = true;
             this.timeShoot = 7f;
         }
-        else if (attack == 1)
+        else if (this.attackName[attack] == "ShootGun")
         {
             this.isShootGun = true;
             this.timeShoot = 5f;
+        }
+        else if (this.attackName[attack] == "ShotSpecial")
+        {
+            this.isShootSpecial = true;
+            this.shootCount = 1;
         }
     }
 
     protected virtual void Shoot()
     {
-        Vector3 diff = this.target.position - bossGun.position;
+        if (this.target == null) return;
+        Vector3 diff = this.target.position - this.bossGun.position;
         diff.Normalize();
         float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
-        bossGun.rotation = Quaternion.Euler(0, 0, rot_z + 90f);
-        Quaternion rot = bossGun.rotation;
-        Vector3 pos = bossGun.position;
-        pos.x = bossGun.position.x - Random.Range(-0.3f, 0.3f);
-        this.bossShooting.Shoot(BulletSpawner.bossBullet, 0.5f, pos, rot);
-        timeShoot -= Time.deltaTime;
-        if (timeShoot <= 0)
+        this.bossGun.rotation = Quaternion.Euler(0, 0, rot_z + 90f);
+        Quaternion rot = this.bossGun.rotation;
+        Vector3 pos = this.bossGun.position;
+        pos.x = this.bossGun.position.x - Random.Range(-0.3f, 0.3f);
+        this.bossShooting.Shoot(BulletSpawner.bullet_3, 0.5f, pos, rot);
+        this.timeShoot -= Time.deltaTime;
+        if (this.timeShoot <= 0)
         {
             this.isShooting = false;
-            this.bossShooting.SetIsAttacking(isShooting);
+            this.bossShooting.IsAttacking = this.isShooting;
+
         }
     }
 
@@ -105,12 +124,25 @@ public class BossAttacking_1 : EnermyAttack
     {
         Quaternion rot = bossShootGun.rotation;
         Vector3 pos = bossShootGun.position;
-        this.bossShooting.ShootGun(BulletSpawner.enermyBullet_2, 0.5f, pos, rot, 60f, 9);
+        this.bossShooting.ShootGun(BulletSpawner.bullet_2, 0.5f, pos, rot, 60f, 9);
         timeShoot -= Time.deltaTime;
         if (timeShoot <= 0)
         {
             this.isShootGun = false;
-            this.bossShooting.SetIsAttacking(isShootGun);
+            this.bossShooting.IsAttacking = this.isShootGun;
+        }
+    }
+
+    protected virtual void ShootSpecial()
+    {
+        Quaternion rot = this.bossShootGun.rotation;
+        Vector3 pos = this.bossShootGun.position;
+        this.bossShooting.Shoot("Bullet_4", pos, rot);
+        this.shootCount--;
+        if (this.shootCount <= 0)
+        {
+            this.isShootSpecial = false;
+            this.bossShooting.IsAttacking = this.isShootSpecial;
         }
     }
 }

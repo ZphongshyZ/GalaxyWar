@@ -8,9 +8,5 @@ public class EnermyAttack : PhongMonobehaviour
     [SerializeField] protected float attackDelay;
     [SerializeField] protected float attackTime = 0f;
     [SerializeField] protected bool isAttacking = false;
-
-    public virtual void SetIsAttacking(bool value)
-    {
-        this.isAttacking = value;
-    }
+    public bool IsAttacking { get => isAttacking; set => isAttacking = value; }
 }
