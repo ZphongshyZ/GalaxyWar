@@ -7,5 +7,8 @@ public class EnermySO : ScriptableObject
 {
     public string enermyName = "Enermy";
     public int hpMax = 2;
-    public List<DropRate> dropList;
+
+    public List<PointDropRate> pointDropList;
+
+    public List<ItemDropRate> itemDropList;
 }

@@ -100,6 +100,7 @@ public class BossAttacking_1 : EnermyAttack
         }
     }
 
+    //Shoot
     protected virtual void Shoot()
     {
         if (this.target == null) return;
@@ -120,6 +121,7 @@ public class BossAttacking_1 : EnermyAttack
         }
     }
 
+    //ShootGun
     protected virtual void ShootGun()
     {
         Quaternion rot = bossShootGun.rotation;
@@ -133,6 +135,7 @@ public class BossAttacking_1 : EnermyAttack
         }
     }
 
+    //ShootSpecial
     protected virtual void ShootSpecial()
     {
         Quaternion rot = this.bossShootGun.rotation;

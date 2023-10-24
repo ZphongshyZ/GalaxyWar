@@ -4,10 +4,23 @@ using UnityEngine;
 
 public class ShipShooting : PhongMonobehaviour
 {
+    //Singleton
+    protected static ShipShooting instance;
+    public static ShipShooting Instance { get => instance; }
+
     //Properties
     [SerializeField] protected bool isShooting = false;
     [SerializeField] protected float shootDelay = 0.05f;
     [SerializeField] protected float shootTime = 0f;
+    [SerializeField] protected int shootLevel = 1;
+    public int ShootLevel { get => shootLevel; set => shootLevel = value; }
+
+    protected override void Awake()
+    {
+        base.Awake();
+        if (ShipShooting.instance != null) Debug.Log("Only 1 ShipShooting allowed to exist");
+        ShipShooting.instance = this;
+    }
 
     //ShipShooting
     private void Update()

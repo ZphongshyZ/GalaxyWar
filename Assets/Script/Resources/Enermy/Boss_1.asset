@@ -13,7 +13,5 @@ MonoBehaviour:
   m_Name: Boss_1
   m_EditorClassIdentifier: 
   enermyName: Enermy
-  hpMax: 1000
-  dropList:
-  - pointSO: {fileID: 11400000, guid: 5ecc84260f74e0e49ab516c1cce7e137, type: 2}
-    dropRate: 100
+  hpMax: 2
+  pointDropList: []

@@ -23,7 +23,7 @@ public class PointManager : PhongMonobehaviour
         base.Awake();
         if (PointManager.instance != null) Debug.Log("Only 1 PointManager allowed to exist");
         PointManager.instance = this;
-        this.pointText.fontSize = 14;
+        this.pointText.fontSize = 20;
     }
 
     private void Update()

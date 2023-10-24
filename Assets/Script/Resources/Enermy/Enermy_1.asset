@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enermyName: Enermy
   hpMax: 2
-  dropList:
+  pointDropList:
   - pointSO: {fileID: 11400000, guid: 7aff787ffe60929469ed2854f4ce21a2, type: 2}
-    dropRate: 90
+    dropRate: 80
   - pointSO: {fileID: 11400000, guid: 230b8d0e3d6a1bb4696ddf427c073ce8, type: 2}
-    dropRate: 10
+    dropRate: 20
   - pointSO: {fileID: 11400000, guid: 787339a605eeee24ba29bff6b5a57446, type: 2}
     dropRate: -1
   - pointSO: {fileID: 11400000, guid: 5ecc84260f74e0e49ab516c1cce7e137, type: 2}
