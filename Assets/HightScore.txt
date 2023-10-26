@@ -4,3 +4,5 @@ RoBot
 250
 RoBot
 5090
+Phong
+7600
