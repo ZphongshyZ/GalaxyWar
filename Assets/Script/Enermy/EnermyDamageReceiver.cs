@@ -28,7 +28,7 @@ public class EnermyDamageReceiver : DamageReceiver
         Vector3 dropPos = transform.position;
         Quaternion dropRot = transform.rotation;
         PointsSpawner.Instance.Drop( this.enermySO.pointDropList ,dropPos, dropRot);
-        ItemSpawner.Instance.DropItem(dropPos, dropRot);
+        ItemSpawner.Instance.DropItem(this.enermySO.itemDropList, dropPos, dropRot);
     }
 
     public override void Reborn()

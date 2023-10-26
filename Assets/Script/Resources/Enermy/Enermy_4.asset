@@ -16,10 +16,15 @@ MonoBehaviour:
   hpMax: 3
   pointDropList:
   - pointSO: {fileID: 11400000, guid: 7aff787ffe60929469ed2854f4ce21a2, type: 2}
-    dropRate: 35
+    dropRate: 100
   - pointSO: {fileID: 11400000, guid: 230b8d0e3d6a1bb4696ddf427c073ce8, type: 2}
-    dropRate: 50
+    dropRate: 90
   - pointSO: {fileID: 11400000, guid: 787339a605eeee24ba29bff6b5a57446, type: 2}
-    dropRate: 15
+    dropRate: 20
   - pointSO: {fileID: 11400000, guid: 5ecc84260f74e0e49ab516c1cce7e137, type: 2}
     dropRate: -1
+  itemDropList:
+  - itemSO: {fileID: 11400000, guid: f7f7002f2f85c634cb33e0e321f67371, type: 2}
+    dropRate: 100
+  - itemSO: {fileID: 11400000, guid: dfc3b0e7d4949e34690117e2d3c80816, type: 2}
+    dropRate: 5

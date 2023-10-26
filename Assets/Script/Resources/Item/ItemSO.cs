@@ -8,5 +8,4 @@ public class ItemSO : ScriptableObject
 {
     public ItemCode pointsCode = ItemCode.NoItem;
     public string pointName = "Point";
-    public int point = 0;
 }

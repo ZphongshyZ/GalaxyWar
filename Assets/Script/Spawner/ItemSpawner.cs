@@ -5,11 +5,9 @@ using static UnityEditor.PlayerSettings;
 
 public class ItemSpawner : Spawner
 {
+    //Singleton
     private static ItemSpawner instance;
     public static ItemSpawner Instance { get => instance; }
-
-    //Properties
-    public string[] items = { "Item_1" };
 
     protected override void Awake()
     {
@@ -18,17 +16,28 @@ public class ItemSpawner : Spawner
         ItemSpawner.instance = this;
     }
 
-    public virtual void DropItem(Vector3 pos, Quaternion rot)
+    //ItemSpawner
+    public virtual void DropItem(List<ItemDropRate> dropItem, Vector3 pos, Quaternion rot)
     {
-        string item = this.GachaItem(this.items);
-        Transform pointDrop = this.Spawn(item, pos, rot);
-        if (pointDrop == null) return;
-        pointDrop.gameObject.SetActive(true);
+        int itemNum = this.GachaItem(dropItem);
+        ItemCode itemCode = dropItem[itemNum].itemSO.pointsCode;
+        Transform itemDrop = this.Spawn(itemCode.ToString(), pos, rot);
+        if (itemDrop == null) return;
+        itemDrop.gameObject.SetActive(true);
     }
 
-    protected virtual string GachaItem(string[] items)
+
+    public virtual int GachaItem(List<ItemDropRate> dropList)
     {
-        int rate = Random.Range(0, items.Length);      
-        return items[rate];
+        int item = 0;
+        int rate = Random.Range(0, 100);
+        for (int i = 0; i < dropList.Count; i++)
+        {
+            if (rate <= dropList[i].dropRate)
+            {
+                item = i;
+            }
+        }
+        return item;
     }
 }
