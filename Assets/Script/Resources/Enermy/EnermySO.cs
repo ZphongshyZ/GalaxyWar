@@ -9,6 +9,5 @@ public class EnermySO : ScriptableObject
     public int hpMax = 2;
 
     public List<PointDropRate> pointDropList;
-
     public List<ItemDropRate> itemDropList;
 }

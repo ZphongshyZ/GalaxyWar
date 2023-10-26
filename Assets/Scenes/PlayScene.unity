@@ -1430,11 +1430,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 219362886}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a8dd27a4bf7fb6b4e8840ae7048477f4, type: 3}
+  m_Script: {fileID: 11500000, guid: f574c7b4124830d469ccb863eae9f281, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   isFlying: 1
-  movespeed: 1
+  movespeed: 0.8
   direction: {x: 0, y: -1, z: 0}
 --- !u!1 &224685710
 GameObject:
@@ -1477,7 +1477,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 224685710}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 04ef60a7c1fa003448d11b2593b48304, type: 3}
+  m_Script: {fileID: 11500000, guid: dd9c25926f82cba42a909e758f88ed69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   dislimit: 70
@@ -3014,6 +3014,8 @@ MonoBehaviour:
   prefabs:
   - {fileID: 624565188}
   poolObjs: []
+  items:
+  - Item_1
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -3842,7 +3844,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 624565188}
-  - component: {fileID: 624565189}
   m_Layer: 0
   m_Name: Item_1
   m_TagString: Untagged
@@ -3869,21 +3870,6 @@ Transform:
   m_Father: {fileID: 1973884332}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &624565189
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 624565187}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e3b6487abef2804eb1c5111dc4c95f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 157636586}
-  maxReceived: 3
-  itemDespawn: {fileID: 224685712}
 --- !u!1 &626549104
 GameObject:
   m_ObjectHideFlags: 0
@@ -5597,7 +5583,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea017fe1eddd53d4dbcb6270c0cf7df4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enermySO: {fileID: 11400000, guid: 7747d889ec39aef4ebe9917836e5c284, type: 2}
+  enermySO: {fileID: 11400000, guid: 6460ce359cb012b4784ac2e18d3a3ea1, type: 2}
   hp: 1
   hpMax: 1
   isDead: 0
@@ -6081,7 +6067,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea017fe1eddd53d4dbcb6270c0cf7df4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enermySO: {fileID: 11400000, guid: 897069314c46cdf469a25e092c1eff9b, type: 2}
+  enermySO: {fileID: 11400000, guid: e5e1d072d9b40814d8b1145c3d173738, type: 2}
   hp: 1
   hpMax: 1
   isDead: 0
@@ -6456,7 +6442,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea017fe1eddd53d4dbcb6270c0cf7df4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enermySO: {fileID: 11400000, guid: 87f66f32ccc22bb47ba4b0ef9babb76f, type: 2}
+  enermySO: {fileID: 11400000, guid: b8e40fe0edde2a54593458b5bca38cf5, type: 2}
   hp: 1
   hpMax: 1
   isDead: 0
@@ -6767,7 +6753,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea017fe1eddd53d4dbcb6270c0cf7df4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enermySO: {fileID: 11400000, guid: 3226a9dd5b701cc499e5c4759ac02ece, type: 2}
+  enermySO: {fileID: 11400000, guid: c857f316d1859b548b06e2e962abfacc, type: 2}
   hp: 1
   hpMax: 1
   isDead: 0
@@ -9808,7 +9794,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fd97c26eb90d4440836ebe6b430718a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enermySO: {fileID: 11400000, guid: ae9b2a4ed01172f459a92ddab642ebc5, type: 2}
+  enermySO: {fileID: 11400000, guid: 6e845fb1966769243b523182df797be1, type: 2}
   hp: 1
   hpMax: 1
   isDead: 0
@@ -10327,7 +10313,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea017fe1eddd53d4dbcb6270c0cf7df4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enermySO: {fileID: 11400000, guid: 47c6112ae072d864596c7f90d39d72d2, type: 2}
+  enermySO: {fileID: 11400000, guid: fa3dd03f54af27b498b466d84e9f1cc6, type: 2}
   hp: 1
   hpMax: 1
   isDead: 0
@@ -11725,7 +11711,6 @@ GameObject:
   - component: {fileID: 1839690833}
   - component: {fileID: 1839690834}
   - component: {fileID: 1839690836}
-  - component: {fileID: 1839690835}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -11769,19 +11754,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.3, y: 0.3, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1839690835
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1839690832}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b1b0b87c2851a444aadb3b396b5ae4a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectCanReceived: {fileID: 624565189}
 --- !u!54 &1839690836
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -11855,7 +11827,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea017fe1eddd53d4dbcb6270c0cf7df4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enermySO: {fileID: 11400000, guid: d232f1be2518e3d489d61fcbb44089fd, type: 2}
+  enermySO: {fileID: 11400000, guid: 89d00d75a80e79a4eb58bbb5f7881cf1, type: 2}
   hp: 1
   hpMax: 1
   isDead: 0
@@ -12074,7 +12046,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea017fe1eddd53d4dbcb6270c0cf7df4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enermySO: {fileID: 11400000, guid: f415dbbcd6739f84094f082d1c5466cb, type: 2}
+  enermySO: {fileID: 11400000, guid: 2b10cdbb7b917184fafa38fa4ccfd788, type: 2}
   hp: 1
   hpMax: 1
   isDead: 0
@@ -12727,7 +12699,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea017fe1eddd53d4dbcb6270c0cf7df4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enermySO: {fileID: 11400000, guid: 441b91d5df3290543b9e49c84867efba, type: 2}
+  enermySO: {fileID: 11400000, guid: 81cca56aaecb3ed4d8c28c1e795e8126, type: 2}
   hp: 1
   hpMax: 1
   isDead: 0

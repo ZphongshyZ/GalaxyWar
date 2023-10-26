@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.PlayerSettings;
 
 public class ShipShooting : PhongMonobehaviour
 {
@@ -42,9 +43,27 @@ public class ShipShooting : PhongMonobehaviour
         Vector3 spawnPos = transform.position;
         Quaternion rotation = transform.parent.rotation;
         rotation.z = 180f;
-        Transform newBullet = BulletSpawner.Instance.Spawn(BulletSpawner.bullet_1, spawnPos, rotation);
-        if (newBullet == null) return;
-        newBullet.gameObject.SetActive(true);
+        float distanceBetweenBullet = 0.18f;
+        float extremeLeft = distanceBetweenBullet;
+        if (ShipShooting.Instance.shootLevel <= 1)
+        {
+            Transform newBullet = BulletSpawner.Instance.Spawn(BulletSpawner.bullet_1, spawnPos, rotation);
+            if (newBullet == null) return;
+            newBullet.gameObject.SetActive(true);
+        }
+        else
+        {
+            if (this.shootLevel >= 2) extremeLeft = extremeLeft * (this.shootLevel / 2);
+            spawnPos.x = spawnPos.x - extremeLeft;
+            for(int i = 0; i < this.shootLevel; i++)
+            {
+                Transform newBullet = BulletSpawner.Instance.Spawn(BulletSpawner.bullet_1, spawnPos, rotation);
+                if (newBullet == null) return;
+                newBullet.gameObject.SetActive(true);
+                if (this.shootLevel % 2 == 0 && i == (this.shootLevel/2 -1)) spawnPos.x += distanceBetweenBullet * 2;
+                else spawnPos.x += distanceBetweenBullet;
+            }
+        }
     }
 
     protected virtual bool IsShooting()
