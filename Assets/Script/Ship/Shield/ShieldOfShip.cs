@@ -10,11 +10,9 @@ public class ShieldOfShip : PhongMonobehaviour
 
     //Obj
     [SerializeField] protected GameObject shield;
-    [SerializeField] protected GameObject ship;
 
     //Properties
-    [SerializeField] protected bool isShielding = false;
-    public bool IsShielding { get => isShielding; set => isShielding = value; }
+    [SerializeField] protected bool isProtected = false;
 
     [SerializeField] protected float timeShield = 5f;
     [SerializeField] protected float time = 0f;
@@ -32,31 +30,36 @@ public class ShieldOfShip : PhongMonobehaviour
         this.LoadShield();
     }
 
+    //Protected
     protected virtual void LoadShield()
     {
-        this.shield = GameObject.Find("Shield");
-        this.ship = transform.parent.GetComponentInChildren<ShipDamageReiceiver>().gameObject;
+        this.shield = GameObject.Find("Sheild");
     }
 
     protected override void Start()
     {
         base.Start();
-        this.shield.SetActive(isShielding);
+        this.shield.SetActive(false);
     }
 
-    private void Update()
+    protected virtual void Update()
     {
-        this.shield.SetActive(this.isShielding);
-        this.ship.SetActive(!this.isShielding);
         this.TurnOfShield();
+    }
+
+    public virtual void TurnOnShield()
+    {
+        this.isProtected = true;
+        this.shield?.SetActive(true);
     }
 
     public virtual void TurnOfShield()
     {
-        if (this.isShielding == false) return;
+        if (this.isProtected == false) return;
         this.time += Time.deltaTime;
         if (this.time < this.timeShield) return;
         this.time = 0;
-        this.isShielding = false;
+        this.isProtected = false;
+        this.shield?.SetActive(false);
     }
 }

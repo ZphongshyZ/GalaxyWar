@@ -27,10 +27,10 @@ public class ShipDamageReiceiver : DamageReceiver
         GameOverScene.Instance.IsLossing = true;
     }
 
-    public override void Reborn()
+    protected override void ResetValue()
     {
-        this.hpMax = this.enermySO.hpMax;
-        base.Reborn();
+        base.ResetValue();
+        this.hpMax = 1;
     }
 
     //Impact

@@ -6,6 +6,6 @@ public class Item_2 : ItemReceived
 {
     protected override void Upgrade()
     {
-        ShieldOfShip.Instance.IsShielding = true;
+        ShieldOfShip.Instance.TurnOnShield();
     }
 }

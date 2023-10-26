@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46a9b4716509c7c45a0393e32e5b5994, type: 3}
   m_Name: Item_2
   m_EditorClassIdentifier: 
-  pointsCode: 0
+  pointsCode: 2
   pointName: Point

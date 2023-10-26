@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EnermyDamageReceiver : DamageReceiver
 {
+    [SerializeField] protected EnermySO enermySO;
+
     //Properties
     [SerializeField] protected EnermyDeSpawn enermyDeSpawn;
 
@@ -12,12 +14,22 @@ public class EnermyDamageReceiver : DamageReceiver
     {
         base.LoadComponents();
         this.LoadEnermyDeSpawn();
+        this.LoadSO();
     }
 
     protected virtual void LoadEnermyDeSpawn()
     {
         enermyDeSpawn = transform.parent.GetComponentInChildren<EnermyDeSpawn>();
     }
+
+    protected virtual void LoadSO()
+    {
+        if (this.enermySO != null) return;
+        string resPath = "Enermy/" + transform.parent.name;
+        this.enermySO = Resources.Load<EnermySO>(resPath);
+        Debug.Log(transform.name + " LoadEnermySO " + resPath, gameObject);
+    }
+
 
     //EnermyDamageReceiver System
     protected override void OnDead()
