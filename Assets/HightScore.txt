@@ -8,3 +8,5 @@ Phong
 7600
 RoBot
 620
+RoBot
+1200

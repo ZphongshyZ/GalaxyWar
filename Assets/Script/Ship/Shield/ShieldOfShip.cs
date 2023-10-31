@@ -13,6 +13,7 @@ public class ShieldOfShip : PhongMonobehaviour
 
     //Properties
     [SerializeField] protected bool isProtected = false;
+    public bool IsProtected { get => isProtected; }
 
     [SerializeField] protected float timeShield = 5f;
     [SerializeField] protected float time = 0f;

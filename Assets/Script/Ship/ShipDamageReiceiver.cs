@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ShipDamageReiceiver : DamageReceiver
@@ -31,6 +32,15 @@ public class ShipDamageReiceiver : DamageReceiver
     {
         base.ResetValue();
         this.hpMax = 1;
+    }
+
+    protected virtual void Update()
+    {
+        if(ShieldOfShip.Instance.IsProtected == true && isDead == false)
+        {
+            this.hp = 999999999;
+        }
+        else this.Reborn();
     }
 
     //Impact

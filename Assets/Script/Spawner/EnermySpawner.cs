@@ -86,7 +86,7 @@ public class EnermySpawner : Spawner
         this.spawnTime += Time.deltaTime;
         if (this.spawnTime < this.spawnDelay) return;
         this.spawnTime = 0f;
-        string name = RandomEnermy(EnermySpawner.enermyLevel);
+        string name = RandomPrefab(EnermySpawner.enermyLevel);
         List<Transform> enermys = SpawnPoint.Instance.ListEnermy(name);
         for (int i = 0; i < enermys.Count; i++)
         {
@@ -105,7 +105,7 @@ public class EnermySpawner : Spawner
         this.spawnTime += Time.deltaTime;
         if (this.spawnTime < this.spawnDelay) return;
         this.spawnTime = 0f;
-        string name = RandomEnermy(EnermySpawner.bossNames);
+        string name = RandomPrefab(EnermySpawner.bossNames);
         List<Transform> enermys = SpawnPoint.Instance.ListEnermy(name);
         for (int i = 0; i < enermys.Count; i++)
         {
@@ -118,13 +118,13 @@ public class EnermySpawner : Spawner
         this.bossCount++;
     }
 
-    protected virtual string RandomEnermy(string[] enermys)
+    protected virtual string RandomPrefab(string[] enermys)
     {
         int rand = Random.Range(0, enermys.Length);
         return enermys[rand];
     }
 
-    protected virtual string RandomEnermy(List<string> enermys)
+    protected virtual string RandomPrefab(List<string> enermys)
     {
         int rand = Random.Range(0, enermys.Count);
         return enermys[rand];
