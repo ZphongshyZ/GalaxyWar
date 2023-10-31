@@ -7,7 +7,7 @@ public class ShieldDamageSender : DamageSender
     protected override void ResetValue()
     {
         base.ResetValue();
-        this.dame = 999999999;
+        this.dame = 0;
     }
 
     protected virtual void OnTriggerEnter(Collider other)

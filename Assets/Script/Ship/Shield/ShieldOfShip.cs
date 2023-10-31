@@ -13,7 +13,7 @@ public class ShieldOfShip : PhongMonobehaviour
 
     //Properties
     [SerializeField] protected bool isProtected = false;
-    public bool IsProtected { get => isProtected; }
+    public bool IsProtected { get => isProtected; set => isProtected = value; }
 
     [SerializeField] protected float timeShield = 5f;
     [SerializeField] protected float time = 0f;
@@ -51,7 +51,7 @@ public class ShieldOfShip : PhongMonobehaviour
     public virtual void TurnOnShield()
     {
         this.isProtected = true;
-        this.shield?.SetActive(true);
+        this.shield.SetActive(true);
     }
 
     public virtual void TurnOfShield()
@@ -61,6 +61,6 @@ public class ShieldOfShip : PhongMonobehaviour
         if (this.time < this.timeShield) return;
         this.time = 0;
         this.isProtected = false;
-        this.shield?.SetActive(false);
+        this.shield.SetActive(false);
     }
 }

@@ -6,7 +6,7 @@ public class ShieldDameReceiver : DamageReceiver
 {
     protected override void OnDead()
     {
-        
+        ShieldOfShip.Instance.IsProtected = false;
     }
 
     protected override void ResetValue()
