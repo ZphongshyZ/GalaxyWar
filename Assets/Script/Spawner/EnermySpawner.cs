@@ -9,7 +9,9 @@ public class EnermySpawner : Spawner
     public static EnermySpawner Instance { get => instance; }
 
     //List Enermy
-    public static string[] enermyNames = new string[] { "Enermy_1", "Enermy_2", "Enermy_3", "Meteorite",  "Enermy_4", "Enermy_5", "Enermy_4.5", "Enermy_5.5"};
+    public static string[] enermyNames = new string[] {/* "Enermy_1", "Enermy_2", "Enermy_3", "Meteorite",  "Enermy_4", "Enermy_5", "Enermy_4.5", "Enermy_5.5",*/ "Enermy_6"};
+
+    public static string[] bonusEnermy = new string[] { "Enermy_6" };
 
     public static string[] bossNames = new string[] { "Boss_1", "Boss_1" };
 
@@ -49,6 +51,7 @@ public class EnermySpawner : Spawner
         this.SetLevel();
     }
 
+    //Set Level
     protected virtual void SetLevel()
     {
         if (this.count == this.nextCount)
@@ -73,6 +76,7 @@ public class EnermySpawner : Spawner
         }
     }
 
+    //Spawn
     protected virtual void SpawnGame()
     {
         if (GameOverScene.Instance.IsWinning == true || GameOverScene.Instance.IsLossing == true) return;
@@ -80,6 +84,7 @@ public class EnermySpawner : Spawner
         this.EnermySpawning();
     }
 
+    //Spawn Enermy
     protected virtual void EnermySpawning()
     {
         if (this.bossCount > 0) return;
@@ -98,7 +103,14 @@ public class EnermySpawner : Spawner
         }
         this.count++;
     }
+
+    protected virtual void SpawnEnermy_6()
+    {
+
+    }
     
+
+    //Spawn Boss
     protected virtual void BossSpawning()
     {
         if (this.bossCount > 0) return;
@@ -118,6 +130,7 @@ public class EnermySpawner : Spawner
         this.bossCount++;
     }
 
+    //Random
     protected virtual string RandomPrefab(string[] enermys)
     {
         int rand = Random.Range(0, enermys.Length);
