@@ -22,10 +22,10 @@ public class PointsSpawner : Spawner
     }
 
     //PointSpawner System
-    public virtual void Drop(List<PointDropRate> dropList, Vector3 pos, Quaternion rot)
+    public virtual void DropPoint(List<PointDropRate> dropList, Vector3 pos, Quaternion rot)
     {
-        int itemNum = GachaPoint(dropList);
-        PointsCode pointCode = dropList[itemNum].pointSO.pointsCode;
+        int pointNum = GachaPoint(dropList);
+        PointsCode pointCode = dropList[pointNum].pointSO.pointsCode;
         Transform pointDrop = this.Spawn(pointCode.ToString(), pos, rot);
         if (pointDrop == null) return;
         pointDrop.gameObject.SetActive(true);

@@ -9,13 +9,6 @@ public class EnermyFly_6 : EnermyFly
     {
         base.ResetValue();
         this.movespeed = 0.5f;
-    }
-
-    protected override void Fly()
-    {
-        Vector3 direction1 = Vector3.right;
-        Vector3 direction2 = Vector3.down;
-        this.direction = direction1 + direction2;
-        transform.parent.Translate(this.direction * this.movespeed * Time.deltaTime);
+        this.direction = Vector3.right + Vector3.down;
     }
 }

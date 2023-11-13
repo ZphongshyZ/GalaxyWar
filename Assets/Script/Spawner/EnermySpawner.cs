@@ -9,7 +9,7 @@ public class EnermySpawner : Spawner
     public static EnermySpawner Instance { get => instance; }
 
     //List Enermy
-    public static string[] enermyNames = new string[] {/* "Enermy_1", "Enermy_2", "Enermy_3", "Meteorite",  "Enermy_4", "Enermy_5", "Enermy_4.5", "Enermy_5.5",*/ "Enermy_6"};
+    public static string[] enermyNames = new string[] { "Enermy_1", "Enermy_2", "Enermy_3", "Meteorite", "Enermy_4", "Enermy_5", "Enermy_4.5", "Enermy_5.5"};
 
     public static string[] bonusEnermy = new string[] { "Enermy_6" };
 
@@ -18,10 +18,19 @@ public class EnermySpawner : Spawner
     public static List<string> enermyLevel = new List<string>();
 
     //Properties
+    //Enermy
     [SerializeField] protected float spawnDelay;
     [SerializeField] protected float spawnDelayMin = 4f;
     [SerializeField] protected float spawnTime = 0f;
     [SerializeField] public int bossCount = 0;
+
+    //Bonus Enermy
+    [SerializeField] protected float spawnBonusTimeAgain = 15f;
+    [SerializeField] protected float spawnBonusTime = 0f;
+    [SerializeField] protected float spawnBonusDelay = 1f;
+    [SerializeField] protected float timeInBonus = 3f;
+    [SerializeField] protected bool isBonusEnermyTime = false;
+
     [SerializeField] public int level;
     [SerializeField] protected int count;
     [SerializeField] protected int nextCount;
@@ -80,8 +89,9 @@ public class EnermySpawner : Spawner
     protected virtual void SpawnGame()
     {
         if (GameOverScene.Instance.IsWinning == true || GameOverScene.Instance.IsLossing == true) return;
-        if (this.level > 0 && this.level % 8 == 0) this.BossSpawning();
+        if (this.level > 0 && this.level % 5 == 0) this.BossSpawning();
         this.EnermySpawning();
+        this.SpawnBounusEnermy();
     }
 
     //Spawn Enermy
@@ -104,11 +114,41 @@ public class EnermySpawner : Spawner
         this.count++;
     }
 
-    protected virtual void SpawnEnermy_6()
+    protected virtual void SpawnBounusEnermy()
     {
-
+        if (this.level < 3) return;
+        if (this.bossCount > 0) return;
+        this.spawnBonusTime += Time.deltaTime;
+        if (this.spawnBonusTime < this.spawnBonusTimeAgain) return;
+        this.isBonusEnermyTime = true;
+        if(this.isBonusEnermyTime == true)
+        {
+            this.timeInBonus -= Time.deltaTime;
+            if (this.timeInBonus <= 0)
+            {
+                this.isBonusEnermyTime = false;
+            }
+            this.timeInBonus = 3f;
+        }
+        this.spawnBonusDelay -= Time.deltaTime;
+        if (this.spawnBonusDelay > 0) return;
+        if (this.isBonusEnermyTime == false) return;
+        else
+        {
+            string name = RandomPrefab(bonusEnermy);
+            List<Transform> enermys = SpawnPoint.Instance.ListEnermy(name);
+            for (int i = 0; i < enermys.Count; i++)
+            {
+                Transform ranPos = enermys[i];
+                Vector3 pos = ranPos.position;
+                pos.x = ranPos.position.x + Random.Range(-3f, 3f);
+                Quaternion rot = transform.rotation;
+                Transform obj = this.Spawn(name, pos, rot);
+                obj.gameObject.SetActive(true);
+            }
+            this.spawnBonusDelay = 1.5f;
+        }
     }
-    
 
     //Spawn Boss
     protected virtual void BossSpawning()

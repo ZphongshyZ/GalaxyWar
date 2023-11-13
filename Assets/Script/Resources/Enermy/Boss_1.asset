@@ -18,5 +18,5 @@ MonoBehaviour:
   - pointSO: {fileID: 11400000, guid: 5ecc84260f74e0e49ab516c1cce7e137, type: 2}
     dropRate: 0
   itemDropList:
-  - itemSO: {fileID: 0}
-    dropRate: 0
+  - itemSO: {fileID: 11400000, guid: dfc3b0e7d4949e34690117e2d3c80816, type: 2}
+    dropRate: 100

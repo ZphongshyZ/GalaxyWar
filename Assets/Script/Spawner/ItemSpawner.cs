@@ -20,7 +20,7 @@ public class ItemSpawner : Spawner
     public virtual void DropItem(List<ItemDropRate> dropItem, Vector3 pos, Quaternion rot)
     {
         int itemNum = this.GachaItem(dropItem);
-        ItemCode itemCode = dropItem[itemNum].itemSO.pointsCode;
+        ItemCode itemCode = dropItem[itemNum].itemSO.itemCode;
         Transform itemDrop = this.Spawn(itemCode.ToString(), pos, rot);
         if (itemDrop == null) return;
         itemDrop.gameObject.SetActive(true);

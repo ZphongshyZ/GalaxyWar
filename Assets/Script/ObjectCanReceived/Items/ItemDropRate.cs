@@ -4,8 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [Serializable]
-public class PointDropRate
+public class ItemDropRate
 {
-    public PointSO pointSO;
+    public ItemSO itemSO;
     public int dropRate;
 }

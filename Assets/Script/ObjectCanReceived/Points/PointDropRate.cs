@@ -2,8 +2,8 @@ using UnityEngine;
 using System;
 
 [Serializable]
-public class ItemDropRate
+public class PointDropRate
 {
-    public ItemSO itemSO;
+    public PointSO pointSO;
     public int dropRate;
 }
