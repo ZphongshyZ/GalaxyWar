@@ -9,9 +9,9 @@ public class ShieldDameReceiver : DamageReceiver
         ShieldOfShip.Instance.IsProtected = false;
     }
 
-    protected override void ResetValue()
+    public override void Reborn()
     {
-        base.ResetValue();
+        base.Reborn();
         this.isImmortal = true;
     }
 }

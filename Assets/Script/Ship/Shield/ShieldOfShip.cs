@@ -59,8 +59,13 @@ public class ShieldOfShip : PhongMonobehaviour
         if (this.isProtected == false) return;
         this.time += Time.deltaTime;
         if (this.time < this.timeShield) return;
-        this.time = 0;
+        this.time = 0f;
         this.isProtected = false;
         this.shield.SetActive(false);
+    }
+
+    public virtual void ReturnTimeSheild()
+    {
+        this.time = 0f;
     }
 }

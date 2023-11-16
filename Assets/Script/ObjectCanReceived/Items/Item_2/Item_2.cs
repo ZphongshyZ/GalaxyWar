@@ -7,5 +7,6 @@ public class Item_2 : ItemReceived
     protected override void Upgrade()
     {
         ShieldOfShip.Instance.TurnOnShield();
+        ShieldOfShip.Instance.ReturnTimeSheild();
     }
 }
