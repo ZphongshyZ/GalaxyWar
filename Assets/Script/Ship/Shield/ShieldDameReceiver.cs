@@ -12,6 +12,6 @@ public class ShieldDameReceiver : DamageReceiver
     protected override void ResetValue()
     {
         base.ResetValue();
-        this.hpMax = 999999999;
+        this.isImmortal = true;
     }
 }

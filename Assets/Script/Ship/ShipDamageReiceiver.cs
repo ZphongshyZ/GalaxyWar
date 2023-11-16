@@ -38,9 +38,9 @@ public class ShipDamageReiceiver : DamageReceiver
     {
         if(ShieldOfShip.Instance.IsProtected == true && isDead == false)
         {
-            this.hp = 999999999;
+            this.isImmortal = true;
         }
-        else this.Reborn();
+        else this.isImmortal = false;
     }
 
     //Impact

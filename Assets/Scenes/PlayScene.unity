@@ -1508,7 +1508,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 226831129}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8, y: 8, z: 0}
+  m_LocalPosition: {x: -10, y: 10, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1991,7 +1991,6 @@ GameObject:
   - component: {fileID: 357389159}
   - component: {fileID: 357389162}
   - component: {fileID: 357389160}
-  - component: {fileID: 357389161}
   m_Layer: 0
   m_Name: Body
   m_TagString: Player
@@ -2048,21 +2047,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 1
-  hpMax: 999999999
+  hpMax: 1
   isDead: 0
---- !u!114 &357389161
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 357389157}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5985e341546417a41893dc228c7f249a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dame: 999999999
+  isImmortal: 1
 --- !u!54 &357389162
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3189,10 +3176,12 @@ MonoBehaviour:
   spawnDelayMin: 4
   spawnTime: 0
   bossCount: 0
-  spawnBonusTimeAgain: 15
-  spawnBonusTime: 0
+  spawnBonusAgain: 15
+  timeBonusAgain: 0
   spawnBonusDelay: 1
-  timeInBonus: 3
+  timeBonusDelay: 0
+  spawnInBonus: 20
+  timeInBonus: 0
   isBonusEnermyTime: 0
   level: 0
   count: 0
@@ -5900,6 +5889,7 @@ MonoBehaviour:
   hp: 1
   hpMax: 1
   isDead: 0
+  isImmortal: 0
   enermySO: {fileID: 11400000, guid: 6460ce359cb012b4784ac2e18d3a3ea1, type: 2}
   enermyDeSpawn: {fileID: 1485315490}
 --- !u!114 &860692538
@@ -6303,6 +6293,7 @@ MonoBehaviour:
   hp: 1
   hpMax: 1
   isDead: 0
+  isImmortal: 0
   enermySO: {fileID: 11400000, guid: 23566d0f87c147d4f8b3ea25f2036c64, type: 2}
   enermyDeSpawn: {fileID: 666862952}
 --- !u!65 &909274251
@@ -6649,6 +6640,7 @@ MonoBehaviour:
   hp: 1
   hpMax: 1
   isDead: 0
+  isImmortal: 0
   enermySO: {fileID: 11400000, guid: e5e1d072d9b40814d8b1145c3d173738, type: 2}
   enermyDeSpawn: {fileID: 2097652215}
 --- !u!114 &976881331
@@ -7024,6 +7016,7 @@ MonoBehaviour:
   hp: 1
   hpMax: 1
   isDead: 0
+  isImmortal: 0
   enermySO: {fileID: 11400000, guid: b8e40fe0edde2a54593458b5bca38cf5, type: 2}
   enermyDeSpawn: {fileID: 1800909718}
 --- !u!114 &1082428846
@@ -7382,6 +7375,7 @@ MonoBehaviour:
   hp: 1
   hpMax: 1
   isDead: 0
+  isImmortal: 0
   enermySO: {fileID: 11400000, guid: c857f316d1859b548b06e2e962abfacc, type: 2}
   enermyDeSpawn: {fileID: 1112871629}
 --- !u!65 &1100839237
@@ -8261,7 +8255,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFlying: 1
   movespeed: 0.5
-  direction: {x: 0, y: 0, z: -135}
+  direction: {x: 1, y: -1, z: 0}
   zonePlayer: {fileID: 637583517}
   attackDis: 4.5
   currentDis: 0
@@ -8369,7 +8363,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isFlying: 1
-  movespeed: 15
+  movespeed: 3
   direction: {x: 0, y: -1, z: 0}
 --- !u!1 &1230440142
 GameObject:
@@ -10680,6 +10674,7 @@ MonoBehaviour:
   hp: 1
   hpMax: 1
   isDead: 0
+  isImmortal: 0
   playerDespawn: {fileID: 1920501124}
 --- !u!1 &1484092038
 GameObject:
@@ -11198,6 +11193,7 @@ MonoBehaviour:
   hp: 1
   hpMax: 1
   isDead: 0
+  isImmortal: 0
   enermySO: {fileID: 11400000, guid: fa3dd03f54af27b498b466d84e9f1cc6, type: 2}
   enermyDeSpawn: {fileID: 1835868744}
 --- !u!65 &1576698390
@@ -12727,6 +12723,7 @@ MonoBehaviour:
   hp: 1
   hpMax: 1
   isDead: 0
+  isImmortal: 0
   enermySO: {fileID: 11400000, guid: 89d00d75a80e79a4eb58bbb5f7881cf1, type: 2}
   enermyDeSpawn: {fileID: 1998906}
 --- !u!65 &1856171351
@@ -12946,6 +12943,7 @@ MonoBehaviour:
   hp: 1
   hpMax: 1
   isDead: 0
+  isImmortal: 0
   enermySO: {fileID: 11400000, guid: 2b10cdbb7b917184fafa38fa4ccfd788, type: 2}
   enermyDeSpawn: {fileID: 372664171}
 --- !u!65 &1874366070
@@ -13635,6 +13633,7 @@ MonoBehaviour:
   hp: 1
   hpMax: 1
   isDead: 0
+  isImmortal: 0
   enermySO: {fileID: 11400000, guid: 81cca56aaecb3ed4d8c28c1e795e8126, type: 2}
   enermyDeSpawn: {fileID: 827418798}
 --- !u!114 &2070341566

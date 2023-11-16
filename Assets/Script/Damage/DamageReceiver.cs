@@ -8,6 +8,7 @@ public abstract class DamageReceiver : PhongMonobehaviour
     [SerializeField] protected int hp = 1;
     [SerializeField] protected int hpMax = 1;
     [SerializeField] protected bool isDead = false;
+    [SerializeField] protected bool isImmortal = false;
 
     //DamageReceive System
     protected override void OnEnable()
@@ -20,6 +21,7 @@ public abstract class DamageReceiver : PhongMonobehaviour
     {
         this.hp = this.hpMax;
         isDead = false;
+        this.isImmortal = false;
     }
 
     public virtual void Add(int add)
@@ -31,6 +33,7 @@ public abstract class DamageReceiver : PhongMonobehaviour
 
     public virtual void Deduct(int deduct)
     {
+        if (this.isImmortal) return;
         if (this.isDead) return;
         this.hp -= deduct;
         if(this.hp < 0) this.hp = 0;
