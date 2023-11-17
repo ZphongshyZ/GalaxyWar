@@ -6,17 +6,24 @@ public class BossFly : EnermyFly
 {
     //Components
     [SerializeField] protected BossAttacking_1 bossAttacking;
+    [SerializeField] protected BossDamageReceiver bossHealth;
 
     //LoadComponents
     protected override void LoadComponents()
     {
         base.LoadComponents();
         this.LoadAttack();
+        this.LoadHealth();
     }
 
     protected virtual void LoadAttack()
     {
         this.bossAttacking = transform.parent.GetComponentInChildren<BossAttacking_1>();
+    }
+
+    protected virtual void LoadHealth()
+    {
+        this.bossHealth = transform.parent.GetComponentInChildren<BossDamageReceiver>();
     }
 
     //BossFly
@@ -31,6 +38,9 @@ public class BossFly : EnermyFly
         base.Update();
         this.Chase();
         this.bossAttacking.Attack();
+        this.bossAttacking.IsAttacking = !this.isFlying;
+        this.bossHealth.IsImortal = this.isFlying;
+        this.bossHealth.BossHealthBar.gameObject.SetActive(!this.isFlying);
     }
 
     protected override void Chase()
@@ -38,12 +48,10 @@ public class BossFly : EnermyFly
         if (this.currentDis <= this.attackDis)
         {
             this.isFlying = false;
-            this.bossAttacking.IsAttacking = !this.isFlying;
         }
         else
         {
             this.isFlying = true;
-            this.bossAttacking.IsAttacking = !this.isFlying;
         }
     }
 }

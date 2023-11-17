@@ -3169,8 +3169,8 @@ MonoBehaviour:
   - {fileID: 821281539}
   - {fileID: 1111684757}
   - {fileID: 1924618565}
-  - {fileID: 2036051274}
   - {fileID: 216012036}
+  - {fileID: 2036051274}
   poolObjs: []
   spawnDelay: 0
   spawnDelayMin: 4
@@ -7932,8 +7932,8 @@ Transform:
   - {fileID: 821281539}
   - {fileID: 1111684757}
   - {fileID: 1924618565}
-  - {fileID: 2036051274}
   - {fileID: 216012036}
+  - {fileID: 2036051274}
   m_Father: {fileID: 503676926}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

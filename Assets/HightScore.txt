@@ -12,3 +12,5 @@ RoBot
 1200
 RoBot
 230
+RoBot
+500
